@@ -1,4 +1,4 @@
-/* #black {
+#black {
   background-color: #1a1a1a;
   color: rgb(200 200 200);
 }
@@ -9,12 +9,12 @@
 }
 
 #sad {
-  background-color: #0b1220;
+  background-color: #101a2d;
   color: #818cf8;
 }
 
 #royal {
-  background: #0b1220;
+  background: #131e34;
   color: tomato;
 }
 
@@ -32,9 +32,8 @@
   background-color: rgb(32, 21, 15);
   color: goldenrod;
 }
- */
 
-#black {
+/* #black {
   background-color: #1a1a1a;
   color: rgb(200 200 200);
 }
@@ -67,4 +66,4 @@
 #coffee {
   background-color: rgb(51 35 24);
   color: goldenrod;
-}
+} */

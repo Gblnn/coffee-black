@@ -25,7 +25,7 @@ export default function Feed(){
                 }
                 
             </div>
-            <LoadingOutlined style={{fontSize:"2rem"}}/>
+            {/* <LoadingOutlined style={{fontSize:"2rem"}}/> */}
             <div style={{height:"8rem"}}></div>
 
         </div>

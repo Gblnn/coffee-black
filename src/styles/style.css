@@ -80,8 +80,8 @@ button {
     color-scheme: dark;
     background: black;
     color: #9a9a9a;
-    --card-color: #0e0e0e;
-    --nav-color: rgba(50 50 50 /30%);
+    --card-color: #151515;
+    --nav-color: rgba(30 30 30 /70%);
   }
 }
 
