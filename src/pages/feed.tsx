@@ -1,6 +1,5 @@
 import Post from "@/components/post";
 import '@/styles/style.css'
-import {LoadingOutlined} from '@ant-design/icons'
 import { useEffect, useState } from "react";
 
 export default function Feed(){
