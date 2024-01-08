@@ -1,0 +1,104 @@
+:root {
+  color-scheme: light;
+  --card-color: rgb(245 245 245);
+  --nav-color: rgba(240 240 240 /15%);
+}
+
+* {
+  font-family: Clash Grotesk, sans-serif;
+  letter-spacing: 0.05rem;
+  color-scheme: dark;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(240 240 240);
+  color: black;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog {
+  border: 1px solid rgba(240 240 240 / 20%);
+  background: #0a0a0a;
+  color: #9a9a9a;
+}
+
+.dropdown {
+  border: 1px solid rgba(240 240 240 / 20%);
+  background: #0a0a0a;
+  color: #9a9a9a;
+}
+
+.dropdown-item {
+  transition: 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(50 50 50 /30%);
+}
+
+.container {
+  width: 100%;
+  /* border: 1px solid white; */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  align-self: center;
+}
+
+.feed-container {
+  display: flex;
+  flex-flow: column-reverse;
+  align-items: center;
+
+  /* border: 1px solid red; */
+  width: 90%;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  gap: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    color-scheme: dark;
+    background: black;
+    color: #9a9a9a;
+    --card-color: #0e0e0e;
+    --nav-color: rgba(50 50 50 /30%);
+  }
+}
+
+@media (width >= 375px) {
+  .feed-container {
+    width: 350px;
+  }
+}
+
+@media (width >= 768px) {
+  .feed-container {
+    width: 600px;
+  }
+}
+
+@media (width >= 1024px) {
+  .feed-container {
+    margin-top: 6rem;
+  }
+}
