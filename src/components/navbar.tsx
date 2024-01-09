@@ -27,16 +27,16 @@ export default function Navbar() {
 
             <nav className="nav"> 
                     
-                <Link className={location.pathname=="/feed"?"active nav-item":"nav-item"} to="/feed">  <CoffeeBean fill={location.pathname=="/feed"?accent:"#8a8a8a"} /></Link>
+                <Link className={location.pathname=="/feed"?"active nav-item":"nav-item"} to="/feed">  <CoffeeBean fill={location.pathname=="/feed"?accent:"#6a6a6a"} /></Link>
                     
-                <Link className={location.pathname=="/brews"?"active nav-item":"nav-item"} to="/brews"><Coffee stroke={location.pathname=="/brews"?accent:"#8a8a8a"}/></Link>
+                <Link className={location.pathname=="/brews"?"active nav-item":"nav-item"} to="/brews"><Coffee stroke={location.pathname=="/brews"?accent:"#6a6a6a"}/></Link>
 
 
-                <button onClick={setDrawer} className={location.pathname=="/liked"?"active nav-item":"nav-item"} ><Plus stroke={location.pathname=="/liked"?accent:"#8a8a8a"} /></button>
+                <button onClick={setDrawer} className={location.pathname=="/liked"?"active nav-item":"create"} ><Plus stroke={location.pathname=="/liked"?accent:"#6a6a6a"} /></button>
          
-                <Link className={location.pathname=="/posts"?"active nav-item":"nav-item"} to="/posts"><Inbox stroke={location.pathname=="/posts"?accent:"#8a8a8a"}  /></Link>
+                <Link className={location.pathname=="/posts"?"active nav-item":"nav-item"} to="/posts"><Inbox stroke={location.pathname=="/posts"?accent:"#6a6a6a"}  /></Link>
                     
-                <Link className={location.pathname=="/saved"?"active nav-item":"nav-item"} to="/saved"><User stroke={location.pathname=="/saved"?accent:"#8a8a8a"} /></Link>
+                <Link className={location.pathname=="/saved"?"active nav-item":"nav-item"} to="/saved"><User stroke={location.pathname=="/saved"?accent:"#6a6a6a"} /></Link>
 
             </nav>
             <Drawer open={draweropen}>

@@ -36,6 +36,11 @@
   background-color: rgba(249 128 115/ 15%);
 }
 
+.create {
+  border-radius: 0.75rem;
+  padding: 0.6rem;
+}
+
 .active {
   background-color: rgba(249 128 115/ 15%);
 }
