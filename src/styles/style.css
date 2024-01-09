@@ -1,7 +1,7 @@
 :root {
   color-scheme: light;
   --card-color: rgb(245 245 245);
-  --nav-color: rgba(240 240 240 /80%);
+  --nav-color: rgba(255 255 255 /95%);
 }
 
 * {
@@ -84,7 +84,7 @@ button {
   body {
     color-scheme: dark;
     background: black;
-    color: #9a9a9a;
+    color: rgba(255 255 255 /55%);
     --card-color: #1a1a1a;
     --nav-color: rgba(30 30 30 /80%);
   }
