@@ -1,11 +1,12 @@
 import '@/styles/post.css'
 import '@/styles/colorscheme.css'
-import { Coffee, MessagesSquare, MoreVertical } from 'lucide-react'
+import { Coffee, MessagesSquare, MoreHorizontal } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import {  } from '@radix-ui/react-dialog'
 import DialogBox from './dialogbox'
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from './ui/drawer'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem } from './ui/dropdown-menu'
+import { Dropdown, MenuProps } from 'antd'
 
 
 interface Props {
@@ -59,6 +60,26 @@ export default function Post(props:Props) {
         
     }
 
+    const items: MenuProps['items'] = [
+        {
+          key: '1',
+          label: (
+            <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+              Edit Post
+            </a>
+          ),
+        },
+        {
+          key: '2',
+          label: (
+            <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
+              Delete Post
+            </a>
+          ),
+        },
+        
+      ];
+
     return(
         <>
         <div className="post">
@@ -69,9 +90,12 @@ export default function Post(props:Props) {
                 </div>
                 <div className="post-header-more">
 
+                    <Dropdown menu={{items}} trigger={['click']}>
                     <button className='flex' onClick={setDropdown}>
-                        <MoreVertical color='#8a8a8a' width="1.25rem"/>
+                        <MoreHorizontal color='#8a8a8a' width="1.25rem"/>
                     </button>
+                    </Dropdown>
+                    
                     
                     
                 </div>
