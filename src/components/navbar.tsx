@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import CoffeeBean from "./icons/coffeebean";
-import { Coffee, MessageSquareDot, Plus, User } from "lucide-react";
+import { Coffee, Inbox, Plus, User } from "lucide-react";
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "./ui/drawer";
 import { useState } from "react";
 
@@ -34,7 +34,7 @@ export default function Navbar() {
 
                 <button onClick={setDrawer} className={location.pathname=="/liked"?"active nav-item":"nav-item"} ><Plus stroke={location.pathname=="/liked"?accent:"#8a8a8a"} /></button>
          
-                <Link className={location.pathname=="/posts"?"active nav-item":"nav-item"} to="/posts"><MessageSquareDot stroke={location.pathname=="/posts"?accent:"#8a8a8a"}  /></Link>
+                <Link className={location.pathname=="/posts"?"active nav-item":"nav-item"} to="/posts"><Inbox stroke={location.pathname=="/posts"?accent:"#8a8a8a"}  /></Link>
                     
                 <Link className={location.pathname=="/saved"?"active nav-item":"nav-item"} to="/saved"><User stroke={location.pathname=="/saved"?accent:"#8a8a8a"} /></Link>
 
@@ -42,8 +42,9 @@ export default function Navbar() {
             <Drawer open={draweropen}>
                 <DrawerContent className="drawer">
                     <DrawerHeader>
-                        <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-                        <DrawerDescription>This action cannot be undone.</DrawerDescription>
+                        <DrawerTitle>Create a new post</DrawerTitle>
+                        <div style={{height:"45ch"}}></div>
+                        <DrawerDescription></DrawerDescription>
                     </DrawerHeader>
                 </DrawerContent>
             </Drawer>

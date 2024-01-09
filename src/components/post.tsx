@@ -1,10 +1,11 @@
 import '@/styles/post.css'
 import '@/styles/colorscheme.css'
-import { Coffee, MessagesSquare } from 'lucide-react'
+import { Coffee, MessagesSquare, MoreVertical } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import {  } from '@radix-ui/react-dialog'
 import DialogBox from './dialogbox'
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from './ui/drawer'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem } from './ui/dropdown-menu'
 
 
 interface Props {
@@ -22,6 +23,17 @@ export default function Post(props:Props) {
     const [liked, setLiked] = useState(props.liked)
     const [likestate, setLikestate] = useState("#8a8a8a")
     const [draweropen, setDraweropen] = useState(false)
+    const [dropdownopen, setDropdownopen] = useState(false)
+
+    const setDropdown = () =>{
+        if(!dropdownopen){
+            setDropdownopen(true)
+        }
+        else{
+            setDropdownopen(false)
+        }
+        
+    }
 
     useEffect(()=>{
         if(liked == false){
@@ -56,18 +68,12 @@ export default function Post(props:Props) {
                     <h3>{props.author}</h3>
                 </div>
                 <div className="post-header-more">
+
+                    <button className='flex' onClick={setDropdown}>
+                        <MoreVertical color='#8a8a8a' width="1.25rem"/>
+                    </button>
                     
-                    {/* <DropdownMenu>
-                        <DropdownMenuTrigger>
-                            <button className='flex'>
-                                <MoreVertical color='#8a8a8a' width="1.25rem"/>
-                            </button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent className='dropdown'>
-                            <DropdownMenuItem onClick={onEdit}>Edit Post</DropdownMenuItem>
-                            <DropdownMenuItem onClick={onDelete}>Delete Post</DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu> */}
+                    
                 </div>
             </div>
             <div className='content-container'>
@@ -84,7 +90,7 @@ export default function Post(props:Props) {
                     </div>
 
                     <div style={{display:"flex", alignItems:"center", gap:"0.25rem"}}>
-                    <button onClick={setDrawer} className='footer-button'><MessagesSquare  width='1.25rem' color='#6a6a6a'/></button>
+                    <button onClick={setDrawer} className='footer-button'><MessagesSquare style={{marginTop:"0.2rem"}} width='1.25rem' color='#6a6a6a'/></button>
                     <p style={{fontSize:"0.9rem", fontWeight:"600", marginTop:"0.2rem"}}>{props.comments}1</p>
                     </div>
                     
@@ -92,6 +98,13 @@ export default function Post(props:Props) {
                 </div>
             </div>
         </div>
+
+        <DropdownMenu open={false}>
+            <DropdownMenuContent className='dropdown'>
+                <DropdownMenuItem>Edit Post</DropdownMenuItem>
+                <DropdownMenuItem>Delete Post</DropdownMenuItem>
+            </DropdownMenuContent>
+        </DropdownMenu>
 
         <DialogBox open={false}/>
         <Drawer open={draweropen}>
