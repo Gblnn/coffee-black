@@ -88,9 +88,9 @@
   border-radius: 0.5rem;
 }
 
-.footer-button:hover {
+/* .footer-button:hover {
   background-color: rgba(249 128 115/ 15%);
-}
+} */
 
 @media (width >= 768px) {
   /* .post {
