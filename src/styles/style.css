@@ -90,12 +90,6 @@ button {
   }
 }
 
-/* @media (width >= 375px) {
-  .feed-container {
-    width: 350px;
-  }
-} */
-
 @media (width >= 768px) {
   .feed-container {
     width: 600px;
