@@ -26,7 +26,7 @@ export default function Navbar() {
 
             <nav className="nav"> 
                     
-                <Link className={location.pathname=="/feed"?"active nav-item":"nav-item"} to="/feed"><CoffeeBean fill={location.pathname=="/feed"?accent:"#8a8a8a"}/></Link>
+                <Link className={location.pathname=="/feed"?"active nav-item":"nav-item"} to="/feed">  <CoffeeBean fill={location.pathname=="/feed"?accent:"#8a8a8a"} /></Link>
                     
                 <Link className={location.pathname=="/brews"?"active nav-item":"nav-item"} to="/brews"><Coffee stroke={location.pathname=="/brews"?accent:"#8a8a8a"}/></Link>
 
