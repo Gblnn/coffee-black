@@ -48,6 +48,11 @@ button {
   background-color: rgba(50 50 50 /30%);
 }
 
+.drawer {
+  background-color: var(--card-color);
+  border: none;
+}
+
 .container {
   width: 100%;
   /* border: 1px solid white; */
@@ -80,8 +85,8 @@ button {
     color-scheme: dark;
     background: black;
     color: #9a9a9a;
-    --card-color: #151515;
-    --nav-color: rgba(30 30 30 /70%);
+    --card-color: #1a1a1a;
+    --nav-color: rgba(30 30 30 /80%);
   }
 }
 
