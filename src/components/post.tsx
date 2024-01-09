@@ -1,10 +1,9 @@
 import '@/styles/post.css'
 import '@/styles/colorscheme.css'
-import { Coffee, MessagesSquare, MoreVertical } from 'lucide-react'
+import { Coffee, MessagesSquare } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import {  } from '@radix-ui/react-dialog'
 import DialogBox from './dialogbox'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu'
 
 
 interface Props {
@@ -34,14 +33,6 @@ export default function Post(props:Props) {
 
     const onLike = () => {
         setLiked(!liked)
-    }
-
-    const onEdit = () => {
-
-    }
-
-    const onDelete = () => {
-        
     }
 
     return(

@@ -1,10 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import CoffeeBean from "./icons/coffeebean";
 import { Coffee, MessageSquareDot, Plus, User } from "lucide-react";
-import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle } from "./ui/drawer";
-import { Button } from "antd";
+import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "./ui/drawer";
 import { useState } from "react";
-import { NONAME } from "dns";
 
 
 export default function Navbar() {
