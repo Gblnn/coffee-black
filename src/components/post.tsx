@@ -5,8 +5,7 @@ import { useEffect, useState } from 'react'
 import {  } from '@radix-ui/react-dialog'
 import DialogBox from './dialogbox'
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from './ui/drawer'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem } from './ui/dropdown-menu'
-import { Dropdown, MenuProps } from 'antd'
+import { ConfigProvider, Dropdown, MenuProps, theme } from 'antd'
 
 
 interface Props {
@@ -64,7 +63,7 @@ export default function Post(props:Props) {
         {
           key: '1',
           label: (
-            <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+            <a>
               Edit Post
             </a>
           ),
@@ -89,12 +88,14 @@ export default function Post(props:Props) {
                     <h3>{props.author}</h3>
                 </div>
                 <div className="post-header-more">
-
+                    <ConfigProvider theme={{algorithm: theme.darkAlgorithm,}}>
                     <Dropdown menu={{items}} trigger={['click']}>
                     <button className='flex' onClick={setDropdown}>
                         <MoreHorizontal color='#8a8a8a' width="1.25rem"/>
                     </button>
                     </Dropdown>
+                    </ConfigProvider>
+                    
                     
                     
                     
@@ -122,13 +123,8 @@ export default function Post(props:Props) {
                 </div>
             </div>
         </div>
-
-        <DropdownMenu open={false}>
-            <DropdownMenuContent className='dropdown'>
-                <DropdownMenuItem>Edit Post</DropdownMenuItem>
-                <DropdownMenuItem>Delete Post</DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
+        
+        
 
         <DialogBox open={false}/>
         <Drawer open={draweropen}>
