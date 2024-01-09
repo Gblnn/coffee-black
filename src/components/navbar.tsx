@@ -33,7 +33,7 @@ export default function Navbar() {
                 <Link className={location.pathname=="/brews"?"active nav-item":"nav-item"} to="/brews"><Coffee stroke={location.pathname=="/brews"?accent:"#8a8a8a"}/></Link>
 
 
-                <Link onClick={setDrawer} className={location.pathname=="/liked"?"active nav-item":"nav-item"} to=""><Plus stroke={location.pathname=="/liked"?accent:"#8a8a8a"} /></Link>
+                <button onClick={setDrawer} className={location.pathname=="/liked"?"active nav-item":"nav-item"} ><Plus stroke={location.pathname=="/liked"?accent:"#8a8a8a"} /></button>
          
                 <Link className={location.pathname=="/posts"?"active nav-item":"nav-item"} to="/posts"><MessageSquareDot stroke={location.pathname=="/posts"?accent:"#8a8a8a"}  /></Link>
                     
