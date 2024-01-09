@@ -23,7 +23,7 @@ export default function Post(props:Props) {
 
     useEffect(()=>{
         if(liked == false){
-            setLikestate("#8a8a8a")
+            setLikestate("#6a6a6a")
         }
         if(liked == true){
             setLikestate("salmon")
