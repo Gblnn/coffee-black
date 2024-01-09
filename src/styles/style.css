@@ -1,7 +1,7 @@
 :root {
   color-scheme: light;
   --card-color: rgb(245 245 245);
-  --nav-color: rgba(240 240 240 /70%);
+  --nav-color: rgba(240 240 240 /80%);
 }
 
 * {

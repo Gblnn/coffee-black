@@ -4,6 +4,7 @@ import { Coffee, MessageSquareDot, Plus, User } from "lucide-react";
 import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle } from "./ui/drawer";
 import { Button } from "antd";
 import { useState } from "react";
+import { NONAME } from "dns";
 
 
 export default function Navbar() {
@@ -32,7 +33,7 @@ export default function Navbar() {
                 <Link className={location.pathname=="/brews"?"active nav-item":"nav-item"} to="/brews"><Coffee stroke={location.pathname=="/brews"?accent:"#8a8a8a"}/></Link>
 
 
-                <Link onClick={setDrawer} className={location.pathname=="/liked"?"active nav-item":"nav-item"} to="/liked"><Plus stroke={location.pathname=="/liked"?accent:"#8a8a8a"} /></Link>
+                <Link onClick={setDrawer} className={location.pathname=="/liked"?"active nav-item":"nav-item"} to=""><Plus stroke={location.pathname=="/liked"?accent:"#8a8a8a"} /></Link>
          
                 <Link className={location.pathname=="/posts"?"active nav-item":"nav-item"} to="/posts"><MessageSquareDot stroke={location.pathname=="/posts"?accent:"#8a8a8a"}  /></Link>
                     
@@ -45,10 +46,10 @@ export default function Navbar() {
                         <DrawerTitle>Are you absolutely sure?</DrawerTitle>
                         <DrawerDescription>This action cannot be undone.</DrawerDescription>
                     </DrawerHeader>
-                    <DrawerFooter className="flex">
+                    {/* <DrawerFooter className="flex">
                         <Button>Submit</Button>
                         <Button onClick={setDrawer}>Cancel</Button>
-                    </DrawerFooter>
+                    </DrawerFooter> */}
                 </DrawerContent>
             </Drawer>
             </div>

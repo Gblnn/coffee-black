@@ -54,7 +54,7 @@ export default function Post(props:Props) {
                 </div>
                 <div className="post-header-more">
                     
-                    <DropdownMenu>
+                    {/* <DropdownMenu>
                         <DropdownMenuTrigger>
                             <button className='flex'>
                                 <MoreVertical color='#8a8a8a' width="1.25rem"/>
@@ -64,7 +64,7 @@ export default function Post(props:Props) {
                             <DropdownMenuItem onClick={onEdit}>Edit Post</DropdownMenuItem>
                             <DropdownMenuItem onClick={onDelete}>Delete Post</DropdownMenuItem>
                         </DropdownMenuContent>
-                    </DropdownMenu>
+                    </DropdownMenu> */}
                 </div>
             </div>
             <div className='content-container'>
