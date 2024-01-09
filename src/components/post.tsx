@@ -4,6 +4,7 @@ import { Coffee, MessagesSquare } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import {  } from '@radix-ui/react-dialog'
 import DialogBox from './dialogbox'
+import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from './ui/drawer'
 
 
 interface Props {
@@ -20,6 +21,7 @@ export default function Post(props:Props) {
 
     const [liked, setLiked] = useState(props.liked)
     const [likestate, setLikestate] = useState("#8a8a8a")
+    const [draweropen, setDraweropen] = useState(false)
 
     useEffect(()=>{
         if(liked == false){
@@ -33,6 +35,16 @@ export default function Post(props:Props) {
 
     const onLike = () => {
         setLiked(!liked)
+    }
+
+    const setDrawer = () =>{
+        if(!draweropen){
+            setDraweropen(true)
+        }
+        else{
+            setDraweropen(false)
+        }
+        
     }
 
     return(
@@ -72,7 +84,7 @@ export default function Post(props:Props) {
                     </div>
 
                     <div style={{display:"flex", alignItems:"center", gap:"0.25rem"}}>
-                    <button className='footer-button'><MessagesSquare  width='1.25rem' color='#6a6a6a'/></button>
+                    <button onClick={setDrawer} className='footer-button'><MessagesSquare  width='1.25rem' color='#6a6a6a'/></button>
                     <p style={{fontSize:"0.9rem", fontWeight:"600", marginTop:"0.2rem"}}>{props.comments}1</p>
                     </div>
                     
@@ -82,6 +94,17 @@ export default function Post(props:Props) {
         </div>
 
         <DialogBox open={false}/>
+        <Drawer open={draweropen}>
+            <DrawerContent className="drawer">
+                <DrawerHeader>
+                    <DrawerTitle style={{textAlign:"center"}}>Comments</DrawerTitle>
+                    <div style={{height:"45ch"}}></div>
+                    <DrawerDescription>
+                        
+                    </DrawerDescription>
+                </DrawerHeader>
+            </DrawerContent>
+        </Drawer>
         
         </>
     )

@@ -7,9 +7,10 @@ import { useState } from "react";
 
 export default function Navbar() {
 
-    const [draweropen, setDraweropen] = useState(false)
+    
     const location = useLocation()
     const accent = "salmon"
+    const [draweropen, setDraweropen] = useState(false)
 
     const setDrawer = () =>{
         if(!draweropen){
@@ -44,10 +45,6 @@ export default function Navbar() {
                         <DrawerTitle>Are you absolutely sure?</DrawerTitle>
                         <DrawerDescription>This action cannot be undone.</DrawerDescription>
                     </DrawerHeader>
-                    {/* <DrawerFooter className="flex">
-                        <Button>Submit</Button>
-                        <Button onClick={setDrawer}>Cancel</Button>
-                    </DrawerFooter> */}
                 </DrawerContent>
             </Drawer>
             </div>

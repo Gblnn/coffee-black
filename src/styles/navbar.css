@@ -46,6 +46,12 @@
   }
 } */
 
+@media (width >= 385px) {
+  .nav {
+    margin-bottom: 2.25rem;
+  }
+}
+
 @media (width >= 1020px) {
   .nav-container {
     height: 100svh;
