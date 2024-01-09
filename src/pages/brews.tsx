@@ -25,7 +25,7 @@ export default function Brews(){
                 }
                 
             </div>
-            <LoadingOutlined style={{fontSize:"2rem"}}/>
+            <LoadingOutlined style={{fontSize:"2rem", zIndex:"-1"}}/>
             <div style={{height:"8rem"}}></div>
 
         </div>
