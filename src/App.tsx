@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Home from "./pages/home"
+import Redirect from "./components/redirect"
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/*" element={<Home/>}/>
+      <Route path="/*" element={<Redirect/>}/>
     </Routes>
     </BrowserRouter>
   )
