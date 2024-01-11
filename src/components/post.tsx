@@ -88,7 +88,7 @@ export default function Post(props:Props) {
                     <h3>{props.author}</h3>
                 </div>
                 <div className="post-header-more">
-                    <ConfigProvider theme={{algorithm: theme.darkAlgorithm,}}>
+                    <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>
                     <Dropdown menu={{items}} trigger={['click']}>
                     <button className='flex' onClick={setDropdown}>
                         <MoreHorizontal color='#8a8a8a' width="1.25rem"/>
