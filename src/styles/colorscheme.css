@@ -1,4 +1,4 @@
-#black {
+/* #black {
   background-color: #1a1a1a;
   color: rgb(200 200 200);
 }
@@ -31,7 +31,7 @@
 #coffee {
   background-color: rgb(32, 21, 15);
   color: goldenrod;
-}
+} */
 
 /* #black {
   background-color: #1a1a1a;
@@ -67,3 +67,43 @@
   background-color: rgb(51 35 24);
   color: goldenrod;
 } */
+
+#black {
+  background-color: #1a1a1a;
+  color: rgb(200 200 200);
+}
+
+#white {
+  background-color: rgb(240 240 240);
+  color: #1a1a1a;
+}
+
+#sad {
+  background-color: #1e2f53;
+  color: #818cf8;
+}
+
+#royal {
+  background: #172554;
+  color: tomato;
+}
+
+/* #pink {
+  background-color: rgb(215, 165, 174);
+  color: rgb(98, 50, 66);
+} */
+
+#pink {
+  background-color: rgb(40, 24, 29);
+  color: rgb(214, 163, 172);
+}
+
+#sky {
+  background-color: rgb(60 157 255);
+  color: white;
+}
+
+#coffee {
+  background-color: rgb(51 35 24);
+  color: goldenrod;
+}
