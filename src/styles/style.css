@@ -85,7 +85,7 @@ button {
     color-scheme: dark;
     background: black;
     color: rgba(255 255 255 /85%);
-    --card-color: #1a1a1a;
+    --card-color: #111111;
     --nav-color: rgba(30 30 30 /80%);
   }
 }
