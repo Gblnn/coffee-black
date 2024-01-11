@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Redirect from "./components/redirect"
+import Home from "./pages/home"
 
 
 function App() {
 
-
+  
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/*" element={<Redirect/>}/>
+      <Route path="/*" element={<Home/>}/>
     </Routes>
     </BrowserRouter>
   )
