@@ -8,6 +8,7 @@ interface Props {
     style?:any
     onCancel?:any
     onConfirm?:any
+    action?:string
 }
 
 export default function DialogBox(props:Props){
@@ -24,7 +25,7 @@ export default function DialogBox(props:Props){
                     <div style={{border:"", width:"100%",display:"flex",gap:"1rem", justifyContent:"center"}}>
                     <ConfigProvider theme={{token:{colorPrimary:"black"}}}>
                     <Button onClick={props.onCancel} type="primary">Cancel</Button>
-                    <Button type="primary">Confirm</Button>
+                    <Button onClick={props.onConfirm} type="primary">Confirm</Button>
                     </ConfigProvider>
                     
                     </div>

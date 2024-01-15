@@ -1,14 +1,19 @@
-import { ConfigProvider, Dropdown, MenuProps, theme } from "antd";
+import { ConfigProvider, Dropdown, MenuProps, message, theme } from "antd";
 import { MoreHorizontal } from "lucide-react";
 import { useState } from "react";
 import DialogBox from "../dialogbox";
 
-export default function MoreButton(){
+interface Props{
+  id:number
+}
+
+export default function MoreButton(props:Props){
 
     const [dropdownopen, setDropdownopen] = useState(false)
     const [dialog, setDialog] = useState(false)
     const [dialogtitle, setDialogtitle] = useState("")
     const [dialogdesc, setdialogdesc] = useState("")
+    const [action, setAction] = useState("")
 
     const setDropdown = () =>{
         if(!dropdownopen){
@@ -20,21 +25,52 @@ export default function MoreButton(){
         
     }
 
+    const Reload = () =>{
+      setTimeout(()=>{
+          window.location.reload()
+      },2000)
+      
+    }
+
     const handleEdit = () => {
       setDialog(true)
       setDialogtitle("Edit Post?")
       setdialogdesc("Confirm edit post?")
+      setAction("edit")
     }
 
     const handleDelete = () => {
       setDialogtitle("Delete Post?")
       setdialogdesc("This action can not be undone")
       setDialog(true)
+      setAction("delete")
     }
 
-    // const handleConfirm = () => {
+    const execEdit = () => {
 
-    // }
+    }
+
+    const execDelete = () => {
+      message.loading("Deleting")
+      fetch('https://6586a271468ef171392e80df.mockapi.io/posts/'+props.id, {
+        method: 'DELETE',
+      })
+      setDialog(false)
+      // fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments?postid="+props.id, {
+      //   method: 'DELETE',
+      // })
+  
+        Reload()
+    }
+
+    const handleConfirm = () => {
+      if(action=="edit"){
+        execEdit
+      }
+      if(action=="delete"){
+        execDelete()
+      }
+    }
 
     const handleCancel = () => {
       setDialog(false)
@@ -71,7 +107,7 @@ export default function MoreButton(){
                 </button>
             </Dropdown>
         </ConfigProvider>
-        <DialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel}/>
+        <DialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel} onConfirm={handleConfirm} action={action}/>
         </>
     )
 }
