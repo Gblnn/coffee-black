@@ -1,8 +1,7 @@
-import { Coffee, Inbox, Plus, User } from "lucide-react";
-import { useState } from "react";
+import { Coffee, Inbox, User } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import PostActionButton from "./buttons/postactionbutton";
 import CoffeeBean from "./icons/coffeebean";
-import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "./ui/drawer";
 
 
 export default function Navbar() {
@@ -10,17 +9,7 @@ export default function Navbar() {
     
     const location = useLocation()
     const accent = "salmon"
-    const [draweropen, setDraweropen] = useState(false)
-
-    const setDrawer = () =>{
-        if(!draweropen){
-            setDraweropen(true)
-        }
-        else{
-            setDraweropen(false)
-        }
         
-    }    
 
     return(
         <div className="nav-container">
@@ -32,7 +21,7 @@ export default function Navbar() {
                 <Link className={location.pathname=="/brews"?"active nav-item":"nav-item"} to="/brews"><Coffee stroke={location.pathname=="/brews"?accent:"#6a6a6a"}/></Link>
 
 
-                <button onClick={setDrawer} className={location.pathname=="/liked"?"active nav-item":"create"} ><Plus stroke={location.pathname=="/liked"?accent:"#6a6a6a"} /></button>
+                <PostActionButton/>
          
                 <Link className={location.pathname=="/posts"?"active nav-item":"nav-item"} to="/posts">
         
@@ -43,15 +32,7 @@ export default function Navbar() {
                 <Link className={location.pathname=="/saved"?"active nav-item":"nav-item"} to="/saved"><User stroke={location.pathname=="/saved"?accent:"#6a6a6a"} /></Link>
 
             </nav>
-            <Drawer open={draweropen}>
-                <DrawerContent className="drawer">
-                    <DrawerHeader>
-                        <DrawerTitle>Create a new post</DrawerTitle>
-                        <DrawerDescription></DrawerDescription>
-                    </DrawerHeader>
-                    <div></div>
-                </DrawerContent>
-            </Drawer>
+            
             </div>
             
     )
