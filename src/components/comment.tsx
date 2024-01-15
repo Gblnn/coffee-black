@@ -11,7 +11,7 @@ export default function Comment(props:Props){
 
     return(
         <>
-        <div style={{border:"", alignItems:"center", background:"rgba(100 100 100/ 10%)", padding:"0.75rem", paddingRight:"1.25rem",paddingLeft:"1rem", borderRadius:"0.5rem"}}>
+        <div style={{border:"", alignItems:"center", background:"rgba(100 100 100/ 10%)", padding:"0.5rem", paddingRight:"1.25rem",paddingLeft:"1rem", borderRadius:"0.5rem"}}>
 
             <div style={{display:"flex",justifyContent:"space-between", background:""}}>
                 <div style={{display:"flex", alignItems:"center", gap:"0.25rem"}}>
