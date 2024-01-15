@@ -2,6 +2,7 @@
   color-scheme: light;
   --card-color: rgb(245 245 245);
   --nav-color: rgba(255 255 255 /80%);
+  --bio-color: rgba(200 200 200 /40%);
 }
 
 * {
