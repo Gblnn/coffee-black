@@ -1,7 +1,7 @@
 import '@/styles/post.css'
 import '@/styles/colorscheme.css'
-import { Coffee, MessagesSquare, MoreHorizontal } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import {MessagesSquare, MoreHorizontal } from 'lucide-react'
+import { useState } from 'react'
 import {  } from '@radix-ui/react-dialog'
 import DialogBox from './dialogbox'
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from './ui/drawer'
@@ -10,19 +10,20 @@ import LikeButton from './likebutton'
 
 
 interface Props {
+    id:number
     profile?:string
     author?:string
     content?:string
-    likes?:number
+    likes:number
     comments?:string
-    liked?:boolean
+    liked:boolean
     colorscheme:string
 }
 
 export default function Post(props:Props) {
 
-    const [liked, setLiked] = useState(props.liked)
-    const [likestate, setLikestate] = useState("#8a8a8a")
+    // const [liked, setLiked] = useState(props.liked)
+    // const [likestate, setLikestate] = useState("#8a8a8a")
     const [draweropen, setDraweropen] = useState(false)
     const [dropdownopen, setDropdownopen] = useState(false)
 
@@ -36,19 +37,10 @@ export default function Post(props:Props) {
         
     }
 
-    useEffect(()=>{
-        if(liked == false){
-            setLikestate("#6a6a6a")
-        }
-        if(liked == true){
-            setLikestate("salmon")
-        }
-    },[liked])
 
-
-    const onLike = () => {
-        setLiked(!liked)
-    }
+    // const onLike = () => {
+    //     setLiked(!liked)
+    // }
 
     const setDrawer = () =>{
         if(!draweropen){

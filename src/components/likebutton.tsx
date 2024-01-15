@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 interface Props {
     likecount:number
     liked:boolean
-    id:string
+    id?:number
 }
 
 

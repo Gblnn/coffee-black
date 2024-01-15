@@ -20,7 +20,7 @@ export default function Feed(){
             <div className="feed-container">
                 {
                     posts.map((posts)=>(
-                        <Post key={posts.id} author={posts.author} profile={posts.profile} likes={posts.likes} comments={posts.comments} liked={posts.liked} content={posts.content} colorscheme={posts.colorscheme}/>
+                        <Post id={posts.id} key={posts.id} author={posts.author} profile={posts.profile} likes={posts.likes} comments={posts.comments} liked={posts.liked} content={posts.content} colorscheme={posts.colorscheme}/>
                     ))
                 }
                 
