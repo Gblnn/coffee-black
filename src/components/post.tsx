@@ -6,13 +6,14 @@ import {  } from '@radix-ui/react-dialog'
 import DialogBox from './dialogbox'
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from './ui/drawer'
 import { ConfigProvider, Dropdown, MenuProps, theme } from 'antd'
+import LikeButton from './likebutton'
 
 
 interface Props {
     profile?:string
     author?:string
     content?:string
-    likes?:string
+    likes?:number
     comments?:string
     liked?:boolean
     colorscheme:string
@@ -98,7 +99,7 @@ export default function Post(props:Props) {
                     
                     
                     
-                    
+                     
                 </div>
             </div>
             <div className='content-container'>
@@ -109,10 +110,8 @@ export default function Post(props:Props) {
             
             <div className="post-footer">
                 <div className='footer-controls'>
-                    <div style={{display:"flex", alignItems:"center", gap:"0.25rem"}}>
-                    <button onClick={onLike} className='footer-button'><Coffee width='1.4rem' color={likestate}/></button>
-                    <p style={{fontSize:"0.9rem", fontWeight:"600", marginTop:"0.2rem"}}>{props.likes}</p>
-                    </div>
+
+                    <LikeButton liked={props.liked} likecount={props.likes}/>
 
                     <div style={{display:"flex", alignItems:"center", gap:"0.25rem"}}>
                     <button onClick={setDrawer} className='footer-button'><MessagesSquare style={{marginTop:"0.2rem"}} width='1.25rem' color='#6a6a6a'/></button>
