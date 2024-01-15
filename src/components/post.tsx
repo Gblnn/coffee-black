@@ -49,7 +49,7 @@ export default function Post(props:Props) {
             </div>
             { bio=="" ? null :
                 <div style={{width:"100%"}}>
-                <div className='bio' style={{height:"fit-content", margin:"0.75rem", marginTop:"0.2rem", borderRadius:"0.5rem", display:"flex", alignItems:"center", paddingLeft:"0.25rem",paddingRight:""}}>
+                <div className='bio' style={{height:"fit-content", margin:"0.75rem", marginTop:"0.2rem",marginBottom:"0.85rem", borderRadius:"0.5rem", display:"flex", alignItems:"center", paddingLeft:"0.25rem",paddingRight:"0.25rem"}}>
                     <div style={{display:"flex", margin:"0.5rem"}}>
                     <p style={{fontSize:"0.8rem"}}><strong>{props.author}</strong>{bio}</p>
                     </div>
