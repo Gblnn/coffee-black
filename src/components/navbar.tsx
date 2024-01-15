@@ -1,4 +1,4 @@
-import { Coffee, Inbox, PlusSquare, User } from "lucide-react";
+import { Coffee, Inbox, Plus, User } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import CoffeeBean from "./icons/coffeebean";
@@ -32,7 +32,7 @@ export default function Navbar() {
                 <Link className={location.pathname=="/brews"?"active nav-item":"nav-item"} to="/brews"><Coffee stroke={location.pathname=="/brews"?accent:"#6a6a6a"}/></Link>
 
 
-                <button onClick={setDrawer} className={location.pathname=="/liked"?"active nav-item":"create"} ><PlusSquare stroke={location.pathname=="/liked"?accent:"#6a6a6a"} /></button>
+                <button onClick={setDrawer} className={location.pathname=="/liked"?"active nav-item":"create"} ><Plus stroke={location.pathname=="/liked"?accent:"#6a6a6a"} /></button>
          
                 <Link className={location.pathname=="/posts"?"active nav-item":"nav-item"} to="/posts">
         
@@ -47,9 +47,9 @@ export default function Navbar() {
                 <DrawerContent className="drawer">
                     <DrawerHeader>
                         <DrawerTitle>Create a new post</DrawerTitle>
-                        <div style={{height:"45ch"}}></div>
                         <DrawerDescription></DrawerDescription>
                     </DrawerHeader>
+                    <div></div>
                 </DrawerContent>
             </Drawer>
             </div>

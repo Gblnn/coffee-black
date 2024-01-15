@@ -3,6 +3,7 @@ import LikeButton from './buttons/likebutton'
 import MoreButton from './buttons/morebutton'
 import DialogBox from './dialogbox'
 import CommentButton from './buttons/commentbutton'
+import { useEffect, useState } from 'react'
 
 
 interface Props {
@@ -14,9 +15,20 @@ interface Props {
     comments:string
     liked:boolean
     colorscheme:string
+    bio?:string
 }
 
 export default function Post(props:Props) {
+
+    const [posts, setPosts] = useState("")
+
+    useEffect(()=>{
+        fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments?postid="+props.id)
+            .then(res => res.json())
+            .then(data => {
+              setPosts(data)
+            })
+      },[props.id])
 
     let bio = "Something elaborate just to occupy space and so that its easier to inspect text overflow behavior"
 
@@ -42,7 +54,7 @@ export default function Post(props:Props) {
                 <div className='footer-controls'>
 
                     <LikeButton id={props.id} liked={props.liked} likecount={props.likes}/>
-                    <CommentButton postid={props.id} comments=''/>
+                    <CommentButton postid={props.id} comments={String(posts.length)=="9"?"0":String(posts.length)}/>
                     
                 </div>
                 

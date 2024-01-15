@@ -1,6 +1,6 @@
 import { Button, ConfigProvider, Input, message, theme } from "antd"
 import { MessagesSquare } from "lucide-react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Comment from "../comment"
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "../ui/drawer"
 
@@ -13,12 +13,23 @@ interface Props {
 export default function CommentButton(props:Props){
 
     const [comment, setComment] = useState("")
-    const user = window.name
+    const [user, setUser] = useState(window.name)
     const postid = props.postid
     const date = new Date().toLocaleDateString()
     const [posts, setPosts] = useState<any[]>([])
     const [loading, setLoading] = useState(false)
     const [draweropen, setDraweropen] = useState(false)
+    const [postable, setPostable] = useState(false)
+
+    //Validation
+    useEffect(()=>{
+        if(comment==""){
+            setPostable(false)
+        }
+        else{
+            setPostable(true)
+        }
+    },[comment])
 
     const setDrawer = () =>{
         if(!draweropen){
@@ -48,7 +59,9 @@ export default function CommentButton(props:Props){
           
     
         const onPost = () => {
-    
+        if(user==""){
+            setUser("user")
+        }
           const obj = {postid, user, comment, date}
           
           
@@ -68,7 +81,7 @@ export default function CommentButton(props:Props){
         <>
         <div style={{display:"flex", alignItems:"center", gap:"0.25rem"}}>
             <button onClick={setDrawer} className='footer-button'><MessagesSquare style={{marginTop:"0.2rem"}} width='1.25rem' color='#6a6a6a'/></button>
-            <p style={{fontSize:"0.9rem", fontWeight:"600", marginTop:"0.2rem"}}>{props.comments}1</p>
+            <p style={{fontSize:"0.9rem", fontWeight:"600", marginTop:"0.2rem"}}>{props.comments}</p>
         </div>
 
         <Drawer open={draweropen}>
@@ -77,7 +90,7 @@ export default function CommentButton(props:Props){
                     <DrawerTitle style={{textAlign:"center"}}>Comments</DrawerTitle>
                     <DrawerDescription>Welcome to the comment section</DrawerDescription>
                 </DrawerHeader>
-                <div style={{height:"65svh", border:"", width:"100%", display:"flex", flexFlow:"column-reverse", padding:"1.5rem", gap:"1rem"}}>
+                <div style={{height:"65svh", border:"", width:"100%", display:"flex", flexFlow:"column",justifyContent:"flex-end", padding:"1.5rem", gap:"1rem"}}>
                 {
                   
                   String(posts.length)=="9"?null:
@@ -91,7 +104,7 @@ export default function CommentButton(props:Props){
                 <div style={{display:"flex",gap:"1rem", width:"100%",alignItems:"center", justifyContent:"center", padding:"1rem", boxShadow:"1px 1px 10px rgba(0 0 0 / 70%)"}}>
                 <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>
                     <Input onChange={e=>setComment(e.target.value)} placeholder="Add comment" bordered={false} style={{color:"",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}}></Input>
-                    <Button onClick={onPost} type="default" loading={loading}>Post</Button>
+                    <Button style={{}} disabled={!postable} onClick={onPost} type="default" loading={loading}>Post</Button>
                 </ConfigProvider>
                 
                 </div>
