@@ -135,7 +135,7 @@ export default function PostActionButton(props:Props){
                     </div>
                     
 
-                    <TextArea className="comment-input" onChange={e=>setContent(e.target.value)} placeholder="Express your thoughts here" bordered={false} style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}}></TextArea>
+                    <TextArea className="comment-input" onChange={e=>setContent(e.target.value)} placeholder="Add Post" bordered={false} style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}}></TextArea>
 
                 </div>
 
