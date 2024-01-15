@@ -1,9 +1,8 @@
+import { Coffee, Inbox, PlusSquare, User } from "lucide-react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import CoffeeBean from "./icons/coffeebean";
-import { Coffee, Inbox, PlusSquare, User } from "lucide-react";
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "./ui/drawer";
-import { useState } from "react";
-import { Badge } from "antd";
 
 
 export default function Navbar() {
@@ -36,9 +35,9 @@ export default function Navbar() {
                 <button onClick={setDrawer} className={location.pathname=="/liked"?"active nav-item":"create"} ><PlusSquare stroke={location.pathname=="/liked"?accent:"#6a6a6a"} /></button>
          
                 <Link className={location.pathname=="/posts"?"active nav-item":"nav-item"} to="/posts">
-                    <Badge size="default" color="salmon">
+        
                         <Inbox stroke={location.pathname=="/posts"?accent:"#6a6a6a"}  />
-                    </Badge>
+                    
                 </Link>
                     
                 <Link className={location.pathname=="/saved"?"active nav-item":"nav-item"} to="/saved"><User stroke={location.pathname=="/saved"?accent:"#6a6a6a"} /></Link>

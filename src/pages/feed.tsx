@@ -1,9 +1,9 @@
 import Post from "@/components/post";
-import '@/styles/style.css'
 import { useEffect, useState } from "react";
 import {LoadingOutlined} from '@ant-design/icons'
 
 export default function Feed(){
+
     const [posts, setPosts] = useState<any[]>([])
 
     useEffect(()=>{
@@ -12,7 +12,8 @@ export default function Feed(){
             .then(data => {
                 setPosts(data)
             })
-    },[])
+    },[setPosts])
+
     return(
         <>
 
@@ -25,9 +26,8 @@ export default function Feed(){
                 }
                 
             </div>
-            {/* <LoadingOutlined style={{fontSize:"2rem"}}/> */}
             <LoadingOutlined style={{fontSize:"2rem", zIndex:"-1"}}/>
-            <div style={{height:"8rem"}}></div>
+            <div style={{height:"6rem"}}></div>
 
         </div>
         </>
