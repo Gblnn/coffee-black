@@ -20,6 +20,7 @@ export default function PostActionButton(props:Props){
     const [postable, setPostable] = useState(false)
     const [loading, setLoading] = useState(false)
     // const [user, setUser] = useState(window.name)
+    const [rejected, setRejected] = useState(false)
 
     //Validation
     useEffect(()=>{
@@ -28,6 +29,23 @@ export default function PostActionButton(props:Props){
         }
         else{
             setPostable(true)
+        }
+    },[content])
+
+    //censorship
+    useEffect(()=>{
+        if(content.includes("kissing")||content.includes("Making out")){
+            setRejected(true)
+        }
+        else{
+            setRejected(false)
+        }
+
+        if(bio.includes("kissing")||content.includes("Making out")){
+            setRejected(true)
+        }
+        else{
+            setRejected(false)
         }
     },[content])
 
@@ -62,7 +80,8 @@ export default function PostActionButton(props:Props){
         
         setLoading(true)
         setTimeout(() => {
-            message.loading("Posting")
+            if(rejected){
+                message.loading("Posting")
             fetch("https://6586a271468ef171392e80df.mockapi.io/posts",
             {
                 method:"POST",
@@ -72,6 +91,12 @@ export default function PostActionButton(props:Props){
             )
             setLoading(false)
             Reload()
+            }
+            else{
+                message.info("Posting failed")
+                setLoading(false)
+            }
+            
         }, 1000);
         
         
