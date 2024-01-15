@@ -3,6 +3,7 @@
   --card-color: rgb(245 245 245);
   --nav-color: rgba(255 255 255 /80%);
   --bio-color: rgba(200 200 200 /40%);
+  --color: black;
 }
 
 * {
@@ -93,6 +94,11 @@ strong {
     --card-color: #151515;
     --nav-color: rgba(30 30 30 /80%);
     --bio-color: rgba(40 40 40 /80%);
+    --color: rgb(240 240 240);
+  }
+  .comment-input::placeholder {
+    opacity: 1;
+    color: rgba(150 150 150 /50%);
   }
 }
 

@@ -101,11 +101,11 @@ export default function CommentButton(props:Props){
                 }
                 </div>
 
-                <div style={{display:"flex",gap:"1rem", width:"100%",alignItems:"center", justifyContent:"center", padding:"1rem", boxShadow:"1px 1px 10px rgba(0 0 0 / 70%)"}}>
-                <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>
-                    <Input onChange={e=>setComment(e.target.value)} placeholder="Add comment" bordered={false} style={{color:"",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}}></Input>
-                    <Button style={{}} disabled={!postable} onClick={onPost} type="default" loading={loading}>Post</Button>
-                </ConfigProvider>
+                <div style={{display:"flex",gap:"1rem", width:"100%",alignItems:"center", justifyContent:"center", padding:"1rem", boxShadow:"1px 1px 10px rgba(0 0 0 / 50%)"}}>
+                {/* <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}> */}
+                    <Input className="comment-input" onChange={e=>setComment(e.target.value)} placeholder="Add comment" bordered={false} style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}}></Input>
+                    <Button style={{color:"var(--color)"}} disabled={!postable} onClick={onPost} type="primary" loading={loading}>Post</Button>
+                {/* </ConfigProvider> */}
                 
                 </div>
                 
