@@ -1,4 +1,4 @@
-import { Button, ConfigProvider, Input, message, theme } from "antd"
+import { Button, ConfigProvider, Input, message } from "antd"
 import { MessagesSquare } from "lucide-react"
 import { useEffect, useState } from "react"
 import Comment from "../comment"
@@ -88,7 +88,7 @@ export default function CommentButton(props:Props){
             <DrawerContent className="drawer">
                 <DrawerHeader>
                     <DrawerTitle style={{textAlign:"center"}}>Comments</DrawerTitle>
-                    <DrawerDescription>Welcome to the comment section</DrawerDescription>
+                    <DrawerDescription></DrawerDescription>
                 </DrawerHeader>
                 <div style={{height:"65svh", border:"", width:"100%", display:"flex", flexFlow:"column",justifyContent:"flex-end", padding:"1.5rem", gap:"1rem"}}>
                 {
@@ -101,10 +101,13 @@ export default function CommentButton(props:Props){
                 }
                 </div>
 
-                <div style={{display:"flex",gap:"1rem", width:"100%",alignItems:"center", justifyContent:"center", padding:"1rem", boxShadow:"1px 1px 10px rgba(0 0 0 / 50%)"}}>
+                <div style={{display:"flex",gap:"1rem", width:"100%",alignItems:"center", justifyContent:"center", padding:"1rem", boxShadow:"1px 1px 20px rgba(0 0 0 / 20%)"}}>
                 {/* <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}> */}
                     <Input className="comment-input" onChange={e=>setComment(e.target.value)} placeholder="Add comment" bordered={false} style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}}></Input>
-                    <Button style={{color:"var(--color)"}} disabled={!postable} onClick={onPost} type="primary" loading={loading}>Post</Button>
+                    <ConfigProvider theme={{token:{ colorBorder:"none", colorBgContainerDisabled:"#2a2a2a", colorTextDisabled:"#6a6a6a"}}}>
+                    <Button type="primary" style={{}} disabled={!postable} onClick={onPost} loading={loading}>Post</Button>
+                    </ConfigProvider>
+                    
                 {/* </ConfigProvider> */}
                 
                 </div>

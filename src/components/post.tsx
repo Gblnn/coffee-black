@@ -1,9 +1,8 @@
 
+import { useEffect, useState } from 'react'
+import CommentButton from './buttons/commentbutton'
 import LikeButton from './buttons/likebutton'
 import MoreButton from './buttons/morebutton'
-import DialogBox from './dialogbox'
-import CommentButton from './buttons/commentbutton'
-import { useEffect, useState } from 'react'
 
 
 interface Props {
@@ -75,7 +74,7 @@ export default function Post(props:Props) {
         
         
 
-        <DialogBox open={false}/>
+        
         
         
         </>

@@ -1,10 +1,14 @@
 import { ConfigProvider, Dropdown, MenuProps, theme } from "antd";
 import { MoreHorizontal } from "lucide-react";
 import { useState } from "react";
+import DialogBox from "../dialogbox";
 
 export default function MoreButton(){
 
     const [dropdownopen, setDropdownopen] = useState(false)
+    const [dialog, setDialog] = useState(false)
+    const [dialogtitle, setDialogtitle] = useState("")
+    const [dialogdesc, setdialogdesc] = useState("")
 
     const setDropdown = () =>{
         if(!dropdownopen){
@@ -16,11 +20,31 @@ export default function MoreButton(){
         
     }
 
+    const handleEdit = () => {
+      setDialog(true)
+      setDialogtitle("Edit Post?")
+      setdialogdesc("Confirm edit post?")
+    }
+
+    const handleDelete = () => {
+      setDialogtitle("Delete Post?")
+      setdialogdesc("This action can not be undone")
+      setDialog(true)
+    }
+
+    // const handleConfirm = () => {
+
+    // }
+
+    const handleCancel = () => {
+      setDialog(false)
+    }
+
     const items: MenuProps['items'] = [
         {
           key: '1',
           label: (
-            <a>
+            <a onClick={handleEdit}>
               Edit Post
             </a>
           ),
@@ -28,13 +52,16 @@ export default function MoreButton(){
         {
           key: '2',
           label: (
-            <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
+            <a onClick={handleDelete}>
               Delete Post
             </a>
           ),
         },
         
     ];
+
+    
+
     return(
         <>
         <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>
@@ -44,6 +71,7 @@ export default function MoreButton(){
                 </button>
             </Dropdown>
         </ConfigProvider>
+        <DialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel}/>
         </>
     )
 }

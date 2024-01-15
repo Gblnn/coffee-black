@@ -1,10 +1,13 @@
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "./ui/dialog";
+import { Button } from "antd";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "./ui/dialog";
 
 interface Props {
     open:boolean
     title?:string
     desc?:string
     style?:any
+    onCancel?:any
+    onConfirm?:any
 }
 
 export default function DialogBox(props:Props){
@@ -13,14 +16,18 @@ export default function DialogBox(props:Props){
         <Dialog open={props.open}>
             <DialogContent className="dialog" style={props.style}>
                 <DialogHeader>
-                <DialogTitle>Are you sure absolutely sure?</DialogTitle>
+                <DialogTitle>{props.title}</DialogTitle>
                 
-                <DialogDescription style={{paddingTop:"1rem"}}>
-                    This action cannot be undone. This will permanently delete your account
-                    and remove your data from our servers.
-                </DialogDescription>
+                <DialogDescription style={{marginTop:"1rem"}}>{props.desc}</DialogDescription>
                 </DialogHeader>
-                <div></div>
+                <DialogFooter>
+                    <div style={{border:"", width:"100%",display:"flex",gap:"1rem", justifyContent:"center"}}>
+                    
+                    <Button onClick={props.onCancel} type="primary">Cancel</Button>
+                    <Button type="primary">Confirm</Button>
+                    </div>
+                    
+                </DialogFooter>
             </DialogContent>
         </Dialog>
         </>
