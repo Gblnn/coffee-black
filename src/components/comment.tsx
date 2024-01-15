@@ -1,7 +1,7 @@
 import MoreButton from "./buttons/morebutton"
 
 interface Props{
-    id:string
+    id:number
     author:string
     comment:string
     date:string
@@ -18,7 +18,7 @@ export default function Comment(props:Props){
                 <p style={{textTransform:"uppercase", fontSize:"0.8rem", fontWeight:400}}><strong>{props.author}</strong></p>
                 <p style={{fontSize:"0.65rem"}}>{props.date}</p>
                 </div>
-                <MoreButton/>
+                <MoreButton id={props.id}/>
             </div>
 
             <p>{props.comment}</p>
