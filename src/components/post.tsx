@@ -18,7 +18,7 @@ interface Props {
 
 export default function Post(props:Props) {
 
-    
+    let bio = "Something elaborate just to occupy space and so that its easier to inspect text overflow behavior"
 
     return(
         <>
@@ -47,14 +47,17 @@ export default function Post(props:Props) {
                 </div>
                 
             </div>
-            <div style={{width:"100%"}}>
-                <div className='bio' style={{height:"fit-content", margin:"0.75rem", marginTop:"0.2rem", borderRadius:"0.5rem", display:"flex", alignItems:"center", paddingLeft:"0.25rem",paddingRight:"0.25rem"}}>
+            { bio=="" ? null :
+                <div style={{width:"100%"}}>
+                <div className='bio' style={{height:"fit-content", margin:"0.75rem", marginTop:"0.2rem", borderRadius:"0.5rem", display:"flex", alignItems:"center", paddingLeft:"0.25rem",paddingRight:""}}>
                     <div style={{display:"flex", margin:"0.5rem"}}>
-                    <p style={{fontSize:"0.8rem"}}><strong>{props.author}</strong> Write something elaborate here, just to occupy space and so that its easier to inspect text overflow behavior</p>
+                    <p style={{fontSize:"0.8rem"}}><strong>{props.author}</strong>{bio}</p>
                     </div>
                     
                 </div>
             </div>
+            }
+            
             
         </div>
         
