@@ -33,11 +33,11 @@ export default function CommentButton(props:Props){
                     <DrawerTitle style={{textAlign:"center"}}>Comments</DrawerTitle>
                     <DrawerDescription>Welcome to the comment section</DrawerDescription>
                 </DrawerHeader>
-                <div style={{height:"65vh"}}></div>
+                <div style={{height:"65svh"}}></div>
 
                 <div style={{display:"flex",gap:"1rem", width:"100%",alignItems:"center", justifyContent:"center", padding:"1rem"}}>
                 <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>
-                    <Input placeholder="Add comment" bordered={false} style={{color:"#8a8a8a",fontSize:"16px", width:"75%"}}></Input>
+                    <Input placeholder="Add comment" bordered={false} style={{color:"#8a8a8a",fontSize:"16px", width:"90%"}}></Input>
                     <Button type="default">Post</Button>
                 </ConfigProvider>
                 
