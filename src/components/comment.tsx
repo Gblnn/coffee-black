@@ -1,4 +1,4 @@
-import { MoreHorizontal } from "lucide-react"
+import MoreButton from "./buttons/morebutton"
 
 interface Props{
     id:string
@@ -18,7 +18,7 @@ export default function Comment(props:Props){
                 <p style={{textTransform:"uppercase", fontSize:"0.8rem", fontWeight:400}}><strong>{props.author}</strong></p>
                 <p style={{fontSize:"0.65rem"}}>{props.date}</p>
                 </div>
-                <MoreHorizontal/>
+                <MoreButton/>
             </div>
 
             <p>{props.comment}</p>
