@@ -80,7 +80,7 @@ export default function PostActionButton(props:Props){
         
         setLoading(true)
         setTimeout(() => {
-            if(rejected){
+            if(rejected||props.userdata=="gbln"){
                 message.loading("Posting")
             fetch("https://6586a271468ef171392e80df.mockapi.io/posts",
             {
