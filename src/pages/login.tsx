@@ -69,9 +69,13 @@ export default function Login() {
         <div style={{display:"flex",justifyContent:"center",alignItems:"center",width:"100%",height:"100svh", border:""}}>
         <div className="auth-card" style={{ height:"fit-content", background:"#1a1a1a", borderRadius:"1rem"}}>
             <div style={{padding:"1.5rem", border:"", height:"100%"}}>
+                <div style={{display:"flex", gap:"0.25rem"}}>
+                <img style={{width:"2.5rem"}} src="/coffee-bag-color.png"/>
                 <h1 style={{fontWeight:600, fontSize:"1.75rem"}}>COFFEE</h1>
+                </div>
+                
                 <ConfigProvider theme={{algorithm: theme.darkAlgorithm, token:{colorPrimary:"salmon"} }}>
-                    <Form style={{marginTop:"2rem"}}>
+                    <Form style={{marginTop:"2.75rem"}}>
                         <div style={{display:"flex", flexFlow:"column", gap:"1rem"}}>
                         <Input onChange={e=>setUsername(e.target.value)} style={{fontFamily:"Clash Grotesk", fontSize:"16px"}} placeholder="Username"/>
                         <Input.Password onChange={e=>setPassword(e.target.value)} style={{fontFamily:"Clash Grotesk", fontSize:"16px"}} placeholder="Password"/>
