@@ -9,6 +9,7 @@ export default function Navbar() {
     
     const location = useLocation()
     const accent = "salmon"
+    const user_data = window.name
         
 
     return(
@@ -21,7 +22,7 @@ export default function Navbar() {
                 <Link className={location.pathname=="/brews"?"active nav-item":"nav-item"} to="/brews"><Coffee stroke={location.pathname=="/brews"?accent:"#6a6a6a"}/></Link>
 
 
-                <PostActionButton/>
+                <PostActionButton userdata={user_data}/>
          
                 <Link className={location.pathname=="/posts"?"active nav-item":"nav-item"} to="/posts">
         

@@ -32,6 +32,14 @@ strong {
   width: 85%;
 }
 
+.hoverable {
+  transition: 0.3s;
+}
+
+.hoverable:hover {
+  background: rgba(100 100 100 /20%);
+}
+
 .flex {
   display: flex;
   align-items: center;
@@ -108,7 +116,7 @@ strong {
 
 @media (width>=420px) {
   .auth-card {
-    width: 340 px;
+    width: 340px;
   }
 }
 

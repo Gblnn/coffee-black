@@ -2,14 +2,22 @@ import '@/app/globals.css';
 import Navbar from "@/components/navbar";
 import '@/styles/navbar.css';
 import '@/styles/style.css';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Brews from './brews';
 import Feed from './feed';
 import Posts from './posts';
 import Saved from './saved';
+import { useEffect } from 'react';
 
 export default function Home(){
 
+    const usenavigate = useNavigate()
+
+  useEffect(()=>{
+    if(window.name == ""){
+      usenavigate("/login")
+    }
+  },[window.name])
   
     return(
         <>

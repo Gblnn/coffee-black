@@ -1,20 +1,22 @@
-import { Button, ConfigProvider, Input, message } from "antd";
+import { Button, ConfigProvider, Input, Select, message } from "antd";
 import TextArea from "antd/es/input/TextArea";
-import { Plus } from "lucide-react";
+import { PlusSquare } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "../ui/drawer";
 
+interface Props{
+    userdata:string
+}
 
-
-export default function PostActionButton(){
-    const [author, setAuthor] = useState("user")
+export default function PostActionButton(props:Props){
+    let [author, setAuthor] = useState("")
     const profile = "/coffee.png"
     const date = new Date().toLocaleDateString()
     const accent = "salmon"
     const [draweropen, setDraweropen] = useState(false)
     const [content, setContent] = useState("")
     const [bio, setBio] = useState("")
-    // const [colorscheme, setColor] = useState("")
+    const [colorscheme, setColor] = useState("")
     const [postable, setPostable] = useState(false)
     const [loading, setLoading] = useState(false)
     // const [user, setUser] = useState(window.name)
@@ -54,9 +56,9 @@ export default function PostActionButton(){
       const onPost=()=>{
 
         
-        setAuthor("user")
+        author = props.userdata
         
-        const obj = {profile, author, content, date, bio}
+        const obj = {profile, author, content, colorscheme, date, bio}
         
         setLoading(true)
         setTimeout(() => {
@@ -76,7 +78,7 @@ export default function PostActionButton(){
     }
     return(
         <>
-        <button onClick={setDrawer} className={location.pathname=="/liked"?"active nav-item":"create"} ><Plus stroke={location.pathname=="/liked"?accent:"#6a6a6a"} /></button>
+        <button onClick={setDrawer} className={location.pathname=="/liked"?"active nav-item":"create"} ><PlusSquare stroke={location.pathname=="/liked"?accent:"#6a6a6a"} /></button>
         
         <Drawer open={draweropen}>
             <DrawerContent className="drawer">
@@ -86,6 +88,27 @@ export default function PostActionButton(){
                 </DrawerHeader>
 
                 <div style={{overflowY:"auto",height:"35svh", border:"", width:"100%", display:"flex", flexFlow:"column",justifyContent:"flex-start", padding:"1.25rem", gap:"1rem"}}>
+
+                    <div style={{display:"flex"}}>
+                    <Input disabled value={props.userdata} onChange={e=>setAuthor(e.target.value)} style={{fontWeight:700, color:"#6a6a6a", fontFamily:"Clash Grotesk", fontSize:"1rem"}} bordered={false} placeholder="How you'll appear"/>
+                    
+                    <Select
+                        defaultValue="white"
+                        bordered={false}
+                        style={{ width: 150, marginLeft:"1rem", fontSize:"16px", color:"#6a6a6a", zIndex:"10" }}
+                        onChange={setColor}
+                        options={[
+                            { value: 'white', label: 'White' },
+                            { value: 'black', label: 'Dark' },
+                            { value: 'sad', label: 'Night' },
+                            { value: 'royal', label: 'Neon' },
+                            { value: 'pink', label: 'Pink' },
+                            { value: 'sky', label: 'Sky' },
+                            { value: 'coffee', label: 'Coffee' }
+                        ]}
+                        />
+                    </div>
+                    
 
                     <TextArea className="comment-input" onChange={e=>setContent(e.target.value)} placeholder="Express your thoughts here" bordered={false} style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}}></TextArea>
 
