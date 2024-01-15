@@ -30,13 +30,10 @@ export default function CommentButton(props:Props){
             <DrawerContent className="drawer">
                 <DrawerHeader>
                     <DrawerTitle style={{textAlign:"center"}}>Comments</DrawerTitle>
-                    <div style={{height:"45ch"}}></div>
-                    
-                    
+                    <DrawerDescription>Welcome to the comment section</DrawerDescription>
                 </DrawerHeader>
-                <DrawerDescription>
-                    
-                    </DrawerDescription>
+                
+                
             </DrawerContent>
         </Drawer>
         </>
