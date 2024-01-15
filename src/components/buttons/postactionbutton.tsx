@@ -1,4 +1,4 @@
-import { Button, ConfigProvider, Input, Select, message } from "antd";
+import { Button, ConfigProvider, Input, Select, message, theme } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import { PlusSquare } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -116,7 +116,7 @@ export default function PostActionButton(props:Props){
 
                     <div style={{display:"flex"}}>
                     <Input disabled value={props.userdata} onChange={e=>setAuthor(e.target.value)} style={{fontWeight:700, color:"#6a6a6a", fontFamily:"Clash Grotesk", fontSize:"1rem"}} bordered={false} placeholder="How you'll appear"/>
-                    
+                    <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>
                     <Select
                         defaultValue="white"
                         bordered={false}
@@ -132,10 +132,13 @@ export default function PostActionButton(props:Props){
                             { value: 'coffee', label: 'Coffee' }
                         ]}
                         />
+                    </ConfigProvider>
+
+                    
                     </div>
                     
 
-                    <TextArea className="comment-input" onChange={e=>setContent(e.target.value)} placeholder="Add Post" bordered={false} style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}}></TextArea>
+                    <TextArea rows={6} className="comment-input" onChange={e=>setContent(e.target.value)} placeholder="Add Post" bordered={false} style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}}></TextArea>
 
                 </div>
 

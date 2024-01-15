@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import CommentButton from './buttons/commentbutton'
 import LikeButton from './buttons/likebutton'
 import MoreButton from './buttons/morebutton'
+import { Bookmark } from 'lucide-react'
 
 
 interface Props {
@@ -47,13 +48,19 @@ export default function Post(props:Props) {
                 </div>
             </div>
             
-            <div className="post-footer">
+            <div className="post-footer" style={{justifyContent:"space-between"}}>
                 <div className='footer-controls'>
 
                     <LikeButton id={props.id} liked={props.liked} likecount={props.likes}/>
                     <CommentButton postid={props.id} comments={String(posts.length)=="9"?"0":String(posts.length)}/>
                     
                 </div>
+
+                <div style={{marginRight:"1.2rem"}}>
+                <Bookmark color='#6a6a6a'/>
+                </div>
+
+                
                 
             </div>
             { props.bio==""||props.bio==null ? null :
