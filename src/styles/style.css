@@ -71,6 +71,10 @@ strong {
   border: none;
 }
 
+.draver:focus {
+  border: none;
+}
+
 .container {
   width: 100%;
   /* border: 1px solid white; */
