@@ -28,6 +28,10 @@ strong {
   margin-right: 0.5rem;
 }
 
+.auth-card {
+  width: 85%;
+}
+
 .flex {
   display: flex;
   align-items: center;
@@ -99,6 +103,12 @@ strong {
   .comment-input::placeholder {
     opacity: 1;
     color: rgba(150 150 150 /50%);
+  }
+}
+
+@media (width>=420px) {
+  .auth-card {
+    width: 340 px;
   }
 }
 
