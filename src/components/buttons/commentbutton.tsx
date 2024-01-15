@@ -1,25 +1,69 @@
+import { Button, ConfigProvider, Input, message, theme } from "antd"
 import { MessagesSquare } from "lucide-react"
 import { useState } from "react"
+import Comment from "../comment"
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "../ui/drawer"
-import { Button, ConfigProvider, Input, theme } from "antd"
 
 
 interface Props {
+    postid:number
     comments:string
 }
 
 export default function CommentButton(props:Props){
+
+    const [comment, setComment] = useState("")
+    const user = window.name
+    const postid = props.postid
+    const date = new Date().toLocaleDateString()
+    const [posts, setPosts] = useState<any[]>([])
+    const [loading, setLoading] = useState(false)
     const [draweropen, setDraweropen] = useState(false)
 
     const setDrawer = () =>{
         if(!draweropen){
             setDraweropen(true)
+            fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments?postid="+postid)
+            .then(res => res.json())
+            .then(data => {
+            setPosts(data)
+            console.log(data)
+      })
         }
         else{
             setDraweropen(false)
         }
-        
+
     }
+        const Reload = () =>{
+            message.loading("Posting")
+            setLoading(true)
+            setTimeout(()=>{
+              setLoading(false)
+              window.location.reload()
+            },1000)
+            
+          }
+    
+          
+    
+        const onPost = () => {
+    
+          const obj = {postid, user, comment, date}
+          
+          
+          fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments",
+          {
+                method:"POST",
+                headers:{'content-type':'application/json'},
+                body:JSON.stringify(obj)
+          }
+          )
+        
+            Reload()
+        }
+        
+    
     return(
         <>
         <div style={{display:"flex", alignItems:"center", gap:"0.25rem"}}>
@@ -33,12 +77,21 @@ export default function CommentButton(props:Props){
                     <DrawerTitle style={{textAlign:"center"}}>Comments</DrawerTitle>
                     <DrawerDescription>Welcome to the comment section</DrawerDescription>
                 </DrawerHeader>
-                <div style={{height:"65svh"}}></div>
+                <div style={{height:"65svh", border:"", width:"100%", display:"flex", flexFlow:"column-reverse", padding:"1.5rem", gap:"1rem"}}>
+                {
+                  
+                  String(posts.length)=="9"?null:
+                  posts.map((post)=>(
+                    <Comment date={post.date} id={post.id} key={post.id} author={post.user} comment={post.comment}/>
+                  ))
+                 
+                }
+                </div>
 
-                <div style={{display:"flex",gap:"1rem", width:"100%",alignItems:"center", justifyContent:"center", padding:"1rem"}}>
+                <div style={{display:"flex",gap:"1rem", width:"100%",alignItems:"center", justifyContent:"center", padding:"1rem", boxShadow:"1px 1px 10px rgba(0 0 0 / 70%)"}}>
                 <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>
-                    <Input placeholder="Add comment" bordered={false} style={{color:"#8a8a8a",fontSize:"16px", width:"90%"}}></Input>
-                    <Button type="default">Post</Button>
+                    <Input onChange={e=>setComment(e.target.value)} placeholder="Add comment" bordered={false} style={{color:"",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}}></Input>
+                    <Button onClick={onPost} type="default" loading={loading}>Post</Button>
                 </ConfigProvider>
                 
                 </div>

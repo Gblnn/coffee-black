@@ -42,7 +42,7 @@ export default function Post(props:Props) {
                 <div className='footer-controls'>
 
                     <LikeButton id={props.id} liked={props.liked} likecount={props.likes}/>
-                    <CommentButton comments={props.comments}/>
+                    <CommentButton postid={props.id} comments=''/>
                     
                 </div>
                 

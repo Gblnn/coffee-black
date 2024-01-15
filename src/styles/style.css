@@ -14,7 +14,7 @@
 }
 
 body {
-  background-color: rgb(240 240 240);
+  background-color: rgb(220 220 220);
   color: black;
 }
 
@@ -24,7 +24,6 @@ button {
 }
 
 strong {
-  font-size: 0.85rem;
   margin-right: 0.25rem;
 }
 

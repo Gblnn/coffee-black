@@ -90,6 +90,7 @@
 
 .bio {
   background-color: var(--bio-color);
+  color: var(--bio-text);
 }
 
 /* .footer-button:hover {
