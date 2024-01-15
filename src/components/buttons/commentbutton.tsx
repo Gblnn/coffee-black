@@ -95,7 +95,7 @@ export default function CommentButton(props:Props){
                   
                   String(posts.length)=="9"?null:
                   posts.map((post)=>(
-                    <Comment date={post.date} id={post.id} key={post.id} author={post.user} comment={post.comment}/>
+                    <Comment date={post.date} id={post.id} key={post.id} author={post.author} comment={post.comment}/>
                   ))
                  
                 }
