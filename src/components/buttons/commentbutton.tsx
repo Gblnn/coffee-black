@@ -90,7 +90,7 @@ export default function CommentButton(props:Props){
                     <DrawerTitle style={{textAlign:"center"}}>Comments</DrawerTitle>
                     <DrawerDescription></DrawerDescription>
                 </DrawerHeader>
-                <div style={{height:"65svh", border:"", width:"100%", display:"flex", flexFlow:"column",justifyContent:"flex-end", padding:"1rem", gap:"1rem", overflowY:"scroll"}}>
+                <div style={{height:"65svh", border:"", width:"100%", display:"flex", flexFlow:"column",justifyContent:"flex-end", padding:"1rem", gap:"1rem", overflowY:"auto"}}>
                 {
                   
                   String(posts.length)=="9"?null:
@@ -104,8 +104,9 @@ export default function CommentButton(props:Props){
                 <div style={{display:"flex",gap:"1rem", width:"100%",alignItems:"center", justifyContent:"center", padding:"1rem", boxShadow:"1px 1px 20px rgba(0 0 0 / 20%)"}}>
                 {/* <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}> */}
                     <Input className="comment-input" onChange={e=>setComment(e.target.value)} placeholder="Add comment" bordered={false} style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}}></Input>
+
                     <ConfigProvider theme={{token:{ colorBorder:"none", colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#6a6a6a"}}}>
-                    <Button type="primary" style={{}} disabled={!postable} onClick={onPost} loading={loading}>Post</Button>
+                    <Button type="primary" style={{}} disabled={!postable} onClick={onPost} loading={loading}>Comment</Button>
                     </ConfigProvider>
                     
                 {/* </ConfigProvider> */}

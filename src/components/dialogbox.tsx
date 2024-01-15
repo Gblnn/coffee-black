@@ -22,7 +22,7 @@ export default function DialogBox(props:Props){
                 </DialogHeader>
                 <DialogFooter>
                     <div style={{border:"", width:"100%",display:"flex",gap:"1rem", justifyContent:"center"}}>
-                    <ConfigProvider theme={{token:{colorPrimary:"salmon"}}}>
+                    <ConfigProvider theme={{token:{colorPrimary:"black"}}}>
                     <Button onClick={props.onCancel} type="primary">Cancel</Button>
                     <Button type="primary">Confirm</Button>
                     </ConfigProvider>
