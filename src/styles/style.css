@@ -22,6 +22,11 @@ button {
   margin: 0;
 }
 
+strong {
+  font-size: 0.85rem;
+  margin-right: 0.1rem;
+}
+
 .flex {
   display: flex;
   align-items: center;
@@ -84,9 +89,10 @@ button {
   body {
     color-scheme: dark;
     background: black;
-    color: rgba(255 255 255 /85%);
+    color: rgba(245 245 245 /75%);
     --card-color: #151515;
     --nav-color: rgba(30 30 30 /80%);
+    --bio-color: rgba(40 40 40 /80%);
   }
 }
 

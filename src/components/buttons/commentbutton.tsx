@@ -1,6 +1,7 @@
 import { MessagesSquare } from "lucide-react"
 import { useState } from "react"
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "../ui/drawer"
+import { Button, ConfigProvider, Input, theme } from "antd"
 
 
 interface Props {
@@ -32,6 +33,16 @@ export default function CommentButton(props:Props){
                     <DrawerTitle style={{textAlign:"center"}}>Comments</DrawerTitle>
                     <DrawerDescription>Welcome to the comment section</DrawerDescription>
                 </DrawerHeader>
+                <div style={{height:"65vh"}}></div>
+
+                <div style={{display:"flex",gap:"1rem", width:"100%",alignItems:"center", justifyContent:"center", padding:"1rem"}}>
+                <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>
+                    <Input placeholder="Add comment" bordered={false} style={{color:"#8a8a8a",fontSize:"16px", width:"75%"}}></Input>
+                    <Button type="default">Post</Button>
+                </ConfigProvider>
+                
+                </div>
+                
                 
                 
             </DrawerContent>

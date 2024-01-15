@@ -2,7 +2,7 @@
 export default function Posts(){
     return(
         <>
-        <h1 style={{color:"white"}}>POSTS</h1>
+        <h1 style={{color:"white"}}>INBOX</h1>
         </>
     )
 }
