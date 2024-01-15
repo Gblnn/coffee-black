@@ -93,7 +93,7 @@ export default function PostActionButton(props:Props){
             Reload()
             }
             else{
-                message.error("Posting failed")
+                message.error("Not Allowed")
                 setLoading(false)
             }
             
