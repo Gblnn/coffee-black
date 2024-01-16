@@ -86,7 +86,6 @@ export default function Login() {
                             
                             <Input onChange={e=>setUsername(e.target.value.toLowerCase())} style={{fontFamily:"Clash Grotesk", fontSize:"16px"}} placeholder="Username"/>
                             
-                    
                             <Input.Password onChange={e=>setPassword(e.target.value)} style={{fontFamily:"Clash Grotesk", fontSize:"16px"}} placeholder="Password"/>
                             
                         

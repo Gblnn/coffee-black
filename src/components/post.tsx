@@ -68,7 +68,7 @@ export default function Post(props:Props) {
             </div>
             { props.bio==""||props.bio==null ? null :
                 <div style={{border:"",width:"100%"}}>
-                <div className='bio' style={{background:"", height:"fit-content", margin:"0.5rem", marginTop:"",marginBottom:"0.75rem", borderRadius:"0.5rem", display:"flex", alignItems:"center", paddingLeft:"0.25rem",paddingRight:"0.25rem"}}>
+                <div className='bio' style={{background:"", height:"fit-content", margin:"0.5rem", marginTop:"",marginBottom:"0.5rem", borderRadius:"0.5rem", display:"flex", alignItems:"center", paddingLeft:"0.25rem",paddingRight:"0.25rem"}}>
                     <div style={{display:"flex", margin:"0.5rem"}}>
 
                     
