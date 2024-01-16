@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import CommentButton from './buttons/commentbutton'
 import LikeButton from './buttons/likebutton'
 import MoreButton from './buttons/morebutton'
-import { Bookmark } from 'lucide-react'
+import SaveButton from './buttons/savebutton'
 
 
 interface Props {
@@ -57,7 +57,7 @@ export default function Post(props:Props) {
                 </div>
 
                 <div style={{marginRight:"1.2rem"}}>
-                <Bookmark color='#6a6a6a'/>
+                <SaveButton/>
                 </div>
 
                 

@@ -91,7 +91,7 @@ export default function CommentButton(props:Props){
                     <DrawerTitle style={{textAlign:"center"}}>Comments</DrawerTitle>
                     <DrawerDescription></DrawerDescription>
                 </DrawerHeader>
-                <div style={{height:"65svh", border:"", width:"100%", display:"flex", flexFlow:"column-reverse",justifyContent:"flex-end", padding:"1rem", gap:"1rem"}}>
+                <div style={{height:"65svh", border:"", width:"100%", display:"flex", flexFlow:"column",justifyContent:"flex-end", padding:"1rem", gap:"1rem"}}>
                     <ScrollArea style={{}}>
                         {
                     
