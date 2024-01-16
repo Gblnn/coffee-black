@@ -36,6 +36,11 @@ p {
   width: 85%;
 }
 
+.inbox {
+  padding: 1.5rem;
+  padding-bottom: 6rem;
+}
+
 .hoverable {
   transition: 0.3s;
   border-radius: 0.5rem;
@@ -133,6 +138,12 @@ p {
 @media (width >= 768px) {
   .feed-container {
     width: 600px;
+  }
+  .inbox {
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
   }
 }
 

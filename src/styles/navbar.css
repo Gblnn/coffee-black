@@ -1,4 +1,5 @@
 .nav-container {
+  position: absolute;
   width: 100svw;
   height: fit-content;
   display: flex;
