@@ -146,7 +146,7 @@ export default function PostActionButton(props:Props){
 
                     <Input onChange={e=>setBio(e.target.value)} className="comment-input" bordered={false} style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}} placeholder="Captions (Optional)"></Input>
 
-                <ConfigProvider theme={{token:{ colorBorder:"none", colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#6a6a6a"}}}>
+                <ConfigProvider theme={{token:{colorPrimary:"#c4743b", colorBorder:"none", colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#6a6a6a"}}}>
                 
                     <Button type="primary" style={{width:"6rem"}} disabled={!postable} onClick={onPost} loading={loading}>Post</Button>
                     </ConfigProvider>
