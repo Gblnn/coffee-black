@@ -84,7 +84,7 @@ export default function Login() {
                     <Form style={{marginTop:"2.75rem"}}>
                         <div style={{display:"flex", flexFlow:"column", gap:"1rem"}}>
                             
-                            <Input onChange={e=>setUsername(e.target.value)} style={{fontFamily:"Clash Grotesk", fontSize:"16px"}} placeholder="Username"/>
+                            <Input onChange={e=>setUsername(e.target.value.toLowerCase())} style={{fontFamily:"Clash Grotesk", fontSize:"16px"}} placeholder="Username"/>
                             
                     
                             <Input.Password onChange={e=>setPassword(e.target.value)} style={{fontFamily:"Clash Grotesk", fontSize:"16px"}} placeholder="Password"/>

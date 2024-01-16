@@ -106,7 +106,7 @@ export default function CommentButton(props:Props){
                 
                 </div>
 
-                <div style={{display:"flex",gap:"1rem", width:"100%",alignItems:"center", justifyContent:"center", padding:"1rem", boxShadow:"1px 1px 20px rgba(0 0 0 / 20%)"}}>
+                <div style={{display:"flex",gap:"1rem", width:"100%",alignItems:"center", justifyContent:"center", padding:"1rem", boxShadow:"1px 1px 10px rgba(0 0 0 / 20%)"}}>
                 {/* <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}> */}
                 <Form style={{width:"100%"}}>
                 
