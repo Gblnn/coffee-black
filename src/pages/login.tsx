@@ -77,8 +77,13 @@ export default function Login() {
                 <ConfigProvider theme={{algorithm: theme.darkAlgorithm, token:{colorPrimary:"salmon"} }}>
                     <Form style={{marginTop:"2.75rem"}}>
                         <div style={{display:"flex", flexFlow:"column", gap:"1rem"}}>
-                        <Input onChange={e=>setUsername(e.target.value)} style={{fontFamily:"Clash Grotesk", fontSize:"16px"}} placeholder="Username"/>
-                        <Input.Password onChange={e=>setPassword(e.target.value)} style={{fontFamily:"Clash Grotesk", fontSize:"16px"}} placeholder="Password"/>
+                            
+                            <Input onChange={e=>setUsername(e.target.value)} style={{fontFamily:"Clash Grotesk", fontSize:"16px"}} placeholder="Username"/>
+                            
+                    
+                            <Input.Password onChange={e=>setPassword(e.target.value)} style={{fontFamily:"Clash Grotesk", fontSize:"16px"}} placeholder="Password"/>
+                            
+                        
                         <Button htmlType="submit" onClick={Validate} loading={loading} disabled={!postable} style={{marginTop:"1.5rem"}}>LOGIN</Button>
                         
                         <Typography style={{marginTop:"0.5rem",fontFamily:"Clash Grotesk", textAlign:"center", color:"rgba(255 255 255/ 50%)"}}>Dont have an account? <Link to="/signup" style={{color:"white"}}>Sign-in</Link></Typography>
