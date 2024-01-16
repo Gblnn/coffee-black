@@ -12,6 +12,8 @@ export default function Login() {
     const [loading, setLoading] = useState(false)
     const usenavigate = useNavigate()
 
+    let loginfailed = false
+
     useEffect(()=>{
         if(username==""){
             setPostable(false)
@@ -55,11 +57,15 @@ export default function Login() {
                 if(post.username === username && post.password === password){
                     message.success("Logged In")
                     usenavigate('/feed')
+                    loginfailed=false
                 }
                 else{
-                    message.info("Invalid credentials")
+                    loginfailed=true
                 }
             })
+            if(loginfailed==true){
+                message.info("Invalid credentials")
+            }
 
         },1000);
             
