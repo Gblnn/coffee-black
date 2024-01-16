@@ -21,6 +21,9 @@ interface Props {
 export default function Post(props:Props) {
 
     const [posts, setPosts] = useState("")
+    const [showMore, setShowMore] = useState(false);
+    // const [ellipsis, setEllipsis] = useState(true);
+    // let rows = 1
 
     useEffect(()=>{
         fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments?postid="+props.id)
@@ -67,7 +70,14 @@ export default function Post(props:Props) {
                 <div style={{border:"",width:"100%"}}>
                 <div className='bio' style={{background:"", height:"fit-content", margin:"0.5rem", marginTop:"",marginBottom:"0.5rem", borderRadius:"0.5rem", display:"flex", alignItems:"center", paddingLeft:"0.25rem",paddingRight:"0.25rem"}}>
                     <div style={{display:"flex", margin:"0.5rem"}}>
-                    <p style={{fontSize:"0.85rem"}}><strong>{props.author}</strong>{props.bio}</p>
+
+                    
+                    <p style={{fontSize:"0.85rem"}}><strong>{props.author}</strong>{showMore? props.bio : props.bio.substring(0, 40)+" ..."}
+                    {
+                    props.bio.length>40?<a style={{fontSize:"0.85rem",fontWeight:500, marginLeft:"0.5rem"}} onClick={()=>setShowMore(!showMore)}>{showMore?"- Less":"More"}</a>:null
+                    }
+                    </p>
+                    
                     </div>
                     
                 </div>
