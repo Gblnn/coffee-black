@@ -121,7 +121,7 @@ p {
     --card-color: #151515;
     --nav-color: rgba(30 30 30 /80%);
     --bio-color: rgba(40 40 40 /80%);
-    --color: rgb(200 200 200);
+    --color: rgb(220 220 220);
   }
   .comment-input::placeholder {
     opacity: 1;
