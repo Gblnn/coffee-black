@@ -3,6 +3,7 @@ import { MessagesSquare } from "lucide-react"
 import { useEffect, useState } from "react"
 import Comment from "../comment"
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "../ui/drawer"
+import { ScrollArea } from "../ui/scroll-area"
 
 
 interface Props {
@@ -90,15 +91,19 @@ export default function CommentButton(props:Props){
                     <DrawerTitle style={{textAlign:"center"}}>Comments</DrawerTitle>
                     <DrawerDescription></DrawerDescription>
                 </DrawerHeader>
-                <div style={{height:"65svh", border:"", width:"100%", display:"flex", flexFlow:"column",justifyContent:"flex-end", padding:"1rem", gap:"1rem", overflowY:"auto"}}>
-                {
+                <div style={{height:"65svh", border:"", width:"100%", display:"flex", flexFlow:"column-reverse",justifyContent:"flex-end", padding:"1rem", gap:"1rem"}}>
+                    <ScrollArea style={{}}>
+                    {
                   
                   String(posts.length)=="9"?null:
+                  
                   posts.map((post)=>(
                     <Comment date={post.date} id={post.id} key={post.id} author={post.user} comment={post.comment}/>
                   ))
                  
                 }
+                    </ScrollArea>
+                
                 </div>
 
                 <div style={{display:"flex",gap:"1rem", width:"100%",alignItems:"center", justifyContent:"center", padding:"1rem", boxShadow:"1px 1px 20px rgba(0 0 0 / 20%)"}}>
