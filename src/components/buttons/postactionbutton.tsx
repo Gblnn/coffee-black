@@ -81,16 +81,16 @@ export default function PostActionButton(props:Props){
         setLoading(true)
         setTimeout(() => {
             if(rejected||props.userdata=="gbln"){
-                message.loading("Posting")
-            fetch("https://6586a271468ef171392e80df.mockapi.io/posts",
-            {
-                method:"POST",
-                headers:{'content-type':'application/json'},
-                body:JSON.stringify(obj)
-            }
-            )
-            setLoading(false)
-            Reload()
+                
+                fetch("https://6586a271468ef171392e80df.mockapi.io/posts",
+                {
+                    method:"POST",
+                    headers:{'content-type':'application/json'},
+                    body:JSON.stringify(obj)
+                }
+                )
+                setLoading(false)
+                Reload()
             }
             else{
                 message.error("Not Allowed")
