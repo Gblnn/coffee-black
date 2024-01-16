@@ -74,7 +74,7 @@ export default function Post(props:Props) {
                     
                     <p style={{fontSize:"0.85rem"}}><strong>{props.author}</strong>{showMore? props.bio : props.bio.substring(0, 70)}
                     {
-                    props.bio.length>70?<a className='hoverable' style={{fontSize:"0.85rem",fontWeight:500, marginLeft:"0.5rem", cursor:"pointer"}} onClick={()=>setShowMore(!showMore)}>{showMore?"Less":"More"}</a>:null
+                    props.bio.length>70?<a className='hoverable' style={{fontSize:"0.85rem",fontWeight:500, marginLeft:"0.25rem", cursor:"pointer"}} onClick={()=>setShowMore(!showMore)}>{showMore?"Less":"More"}</a>:null
                     }
                     </p>
                     
