@@ -40,7 +40,7 @@ export default function CommentButton(props:Props){
             .then(data => {
             setPosts(data)
             console.log(data)
-      })
+            })
         }
         else{
             setDraweropen(false)
@@ -93,15 +93,15 @@ export default function CommentButton(props:Props){
                 </DrawerHeader>
                 <div style={{height:"65svh", border:"", width:"100%", display:"flex", flexFlow:"column-reverse",justifyContent:"flex-end", padding:"1rem", gap:"1rem"}}>
                     <ScrollArea style={{}}>
-                    {
-                  
-                  String(posts.length)=="9"?null:
-                  
-                  posts.map((post)=>(
-                    <Comment date={post.date} id={post.id} key={post.id} author={post.user} comment={post.comment}/>
-                  ))
-                 
-                }
+                        {
+                    
+                        String(posts.length)=="9"?null:
+                    
+                        posts.map((post)=>(
+                            <Comment date={post.date} id={post.id} key={post.id} author={post.user} comment={post.comment}/>
+                        ))
+                    
+                        }
                     </ScrollArea>
                 
                 </div>
