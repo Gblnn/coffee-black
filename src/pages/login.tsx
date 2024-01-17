@@ -80,7 +80,7 @@ export default function Login() {
                 <h1 style={{fontWeight:600, fontSize:"1.75rem"}}>COFFEE</h1>
                 </div>
                 
-                <ConfigProvider theme={{algorithm: theme.darkAlgorithm,token:{colorPrimary:"salmon",colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#6a6a6a"} }}>
+                <ConfigProvider theme={{algorithm: theme.darkAlgorithm,token:{colorPrimary:"salmon",colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#9a9a9a", colorText:"var(--color)"} }}>
                     <Form style={{marginTop:"2.75rem"}}>
                         <div style={{display:"flex", flexFlow:"column", gap:"1rem"}}>
                             

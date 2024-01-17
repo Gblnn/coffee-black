@@ -16,6 +16,7 @@ interface Props {
     liked:boolean
     colorscheme:string
     bio?:string
+    activeuser?:boolean
 }
 
 export default function Post(props:Props) {
@@ -41,8 +42,14 @@ export default function Post(props:Props) {
                     <img className='pfp' src={props.profile}/>
                     <h3>{props.author}</h3>
                 </div>
+                
                 <div className="post-header-more">
-                    <MoreButton id={props.id}/>
+                    {
+                        props.activeuser?
+                        <MoreButton id={props.id}/>
+                        :null
+                    }
+                    
                 </div>
             </div>
             <div className='content-container'>
