@@ -89,9 +89,9 @@ export default function Login() {
                             <input type="password" onChange={e=>setPassword(e.target.value)} style={{fontFamily:"Clash Grotesk", fontSize:"16px"}} placeholder="Password"/>
                             
                         
-                        <Button htmlType="submit" onClick={Validate} loading={loading} disabled={!postable} style={{marginTop:"1.5rem"}}>LOGIN</Button>
+                        <Button htmlType="submit" onClick={Validate} loading={loading} disabled={!postable} style={{marginTop:"1.5rem",border:"1px solid rgba(120 120 120/40%)"}}>LOGIN</Button>
                         
-                        <Typography style={{marginTop:"0.5rem",fontFamily:"Clash Grotesk", textAlign:"center", color:"rgba(100 100 100/ 70%)"}}>Dont have an account? <Link to="/signup" style={{color:"var(--color)", fontWeight:600}}>Sign-in</Link></Typography>
+                        <Typography style={{marginTop:"0.5rem",fontFamily:"Clash Grotesk", textAlign:"center", color:"#6a6a6a"}}>Dont have an account? <Link to="/signup" style={{color:"var(--color)", fontWeight:600}}>Sign-in</Link></Typography>
                         
                         </div>
                         
