@@ -71,7 +71,7 @@ input:focus {
 
 .more {
   border-radius: 0.5rem;
-  padding: 0.2rem;
+  padding: 0.1rem;
   background: rgba(100 100 100 /20%);
   transition: 0.3s;
 }
