@@ -44,6 +44,10 @@ input {
 input::placeholder {
   color: #6a6a6a;
 }
+input:focus {
+  outline: none;
+  border: 1px solid salmon;
+}
 
 .auth-card {
   width: 85%;
