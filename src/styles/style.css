@@ -32,8 +32,22 @@ p {
   user-select: none;
 }
 
+input {
+  padding: 0.25rem;
+  padding-left: 0.75rem;
+  border-radius: 0.25rem;
+  color: var(--color);
+  background-color: var(--nav-color);
+  border: 1px solid rgba(120 120 120 /40%);
+}
+
+input::placeholder {
+  color: #6a6a6a;
+}
+
 .auth-card {
   width: 85%;
+  box-shadow: 1px 1px 20px rgba(0 0 0/ 10%);
 }
 
 .inbox {
