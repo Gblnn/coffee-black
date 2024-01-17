@@ -11,7 +11,7 @@ interface Props{
 export default function PostActionButton(props:Props){
     let [author, setAuthor] = useState("")
     const profile = "/coffee.png"
-    const date = new Date().toLocaleDateString()
+    const date = new Date()
     const accent = "salmon"
     const [draweropen, setDraweropen] = useState(false)
     const [content, setContent] = useState("")

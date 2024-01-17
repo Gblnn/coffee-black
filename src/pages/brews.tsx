@@ -21,7 +21,7 @@ export default function Brews(){
                 {
                     
                     posts.map((posts)=>(
-                        <Post id={posts.id} key={posts.id} author={posts.author} profile={posts.profile} likes={posts.likes} comments={posts.comments} liked={posts.liked} content={posts.content} colorscheme={posts.colorscheme} bio={posts.bio}/>
+                        <Post id={posts.id} key={posts.id} author={posts.author} profile={posts.profile} likes={posts.likes} comments={posts.comments} liked={posts.liked} content={posts.content} colorscheme={posts.colorscheme} bio={posts.bio} date={posts.date}/>
                     ))
                 }
                 

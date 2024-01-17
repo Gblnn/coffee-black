@@ -5,6 +5,8 @@ import LikeButton from './buttons/likebutton'
 import MoreButton from './buttons/morebutton'
 import SaveButton from './buttons/savebutton'
 
+import ReactTimeAgo from 'react-time-ago'
+
 
 interface Props {
     id:number
@@ -16,6 +18,7 @@ interface Props {
     liked:boolean
     colorscheme:string
     bio?:string
+    date:Date
     activeuser?:boolean
 }
 
@@ -31,6 +34,7 @@ export default function Post(props:Props) {
             .then(res => res.json())
             .then(data => {
               setPosts(data)
+              console.log(typeof posts)
             })
       },[props.id])
 
@@ -41,6 +45,8 @@ export default function Post(props:Props) {
                 <div className="post-profile">
                     <img className='pfp' src={props.profile}/>
                     <h3>{props.author}</h3>
+                    <p>•</p>
+                    <ReactTimeAgo style={{fontSize:"0.8rem", fontWeight:400}} date={props.date} locale='en' timeStyle="twitter"/>
                 </div>
                 
                 <div className="post-header-more">

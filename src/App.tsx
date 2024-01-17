@@ -5,6 +5,9 @@ import '@/styles/post.css'
 import '@/styles/style.css'
 import Login from "./pages/login"
 import SignUp from "./pages/signup"
+import TimeAgo from 'javascript-time-ago'
+import en from 'javascript-time-ago/locale/en.json'
+TimeAgo.addDefaultLocale(en)
 
 function App() {
 
