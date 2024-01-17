@@ -72,7 +72,7 @@ export default function Post(props:Props) {
                     
                 </div>
 
-                <div style={{marginRight:"1.2rem"}}>
+                <div style={{marginRight:"1rem"}}>
                 <SaveButton/>
                 </div>
 
