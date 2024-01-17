@@ -62,7 +62,7 @@ export default function SignUp() {
 
                             <Input.Password onChange={e=>setPassword(e.target.value)} style={{fontFamily:"Clash Grotesk", fontSize:"16px"}} placeholder="Password"/>
 
-                            <Button disabled={!postable} style={{marginTop:"1.5rem"}}>LOGIN</Button>
+                            <Button disabled={!postable} style={{marginTop:"1.5rem"}}>Sign-up</Button>
                             
                             <Typography style={{marginTop:"0.5rem",fontFamily:"Clash Grotesk", textAlign:"center", color:"rgba(255 255 255/ 50%)"}}>Dont have an account? <Link to="/login" style={{color:"white", fontWeight:500}}>Log-in</Link></Typography>
                             
