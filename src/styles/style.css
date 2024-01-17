@@ -69,6 +69,17 @@ input:focus {
   background: rgba(100 100 100 /20%);
 }
 
+.more {
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  background: rgba(100 100 100 /20%);
+  transition: 0.3s;
+}
+
+.more:hover {
+  background: rgba(100 100 100 /40%);
+}
+
 .flex {
   display: flex;
   align-items: center;
