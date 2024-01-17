@@ -55,7 +55,7 @@ export default function Login() {
             posts.map((post)=>{
            
                 if(post.username === username && post.password === password){
-                    message.success("Logged In")
+                    // message.success("Logged In")
                     usenavigate('/feed')
                     loginfailed=false
                 }
