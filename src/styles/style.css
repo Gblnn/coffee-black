@@ -111,7 +111,8 @@ input:focus {
   border: none;
 }
 
-.draver:focus {
+.drawer:focus {
+  outline: none;
   border: none;
 }
 
