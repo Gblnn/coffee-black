@@ -146,7 +146,7 @@ input:focus {
   body {
     color-scheme: dark;
     background: black;
-    color: rgba(245 245 245 /55%);
+    color: rgba(245 245 245 /65%);
     --card-color: #151515;
     --nav-color: rgba(30 30 30 /80%);
     --bio-color: rgba(40 40 40 /80%);
