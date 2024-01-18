@@ -1,5 +1,5 @@
 import DialogBox from "@/components/dialogbox";
-import { Button, ConfigProvider } from "antd";
+import { Button, ConfigProvider, theme } from "antd";
 import { LogOut } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -28,8 +28,8 @@ export default function Saved(){
     return(
         <>
         <div style={{top:0,position:"absolute", display:"flex", border:"", width:"100%", justifyContent:"flex-end",alignItems:"center"}}>
-            <ConfigProvider theme={{token:{colorPrimary:"salmon"}}}>
-                <Button onClick={handleLogout} style={{margin:"2rem",display:"flex", gap:"0.5rem", alignItems:"center", justifyContent:"center "}} type="primary"><LogOut width="1rem"/></Button>
+        <ConfigProvider theme={{algorithm: theme.darkAlgorithm, token:{colorPrimary:"salmon",colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#9a9a9a", colorText:"var(--color)"} }}>
+                <Button onClick={handleLogout} style={{margin:"2rem",display:"flex", gap:"0.5rem", alignItems:"center", justifyContent:"center "}} ><LogOut color="var(--color)" width="1rem"/></Button>
             </ConfigProvider>
         </div>
         
