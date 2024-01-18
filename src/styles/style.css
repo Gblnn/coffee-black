@@ -76,10 +76,6 @@ input:focus {
   transition: 0.3s;
 }
 
-.more:hover {
-  background: rgba(100 100 100 /40%);
-}
-
 .flex {
   display: flex;
   align-items: center;
