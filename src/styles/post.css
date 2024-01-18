@@ -63,6 +63,8 @@
   font-size: 1.25rem;
   color: #8a8a8a;
   background: none;
+  text-align: center;
+  width: 75%;
 }
 
 .post-footer {
