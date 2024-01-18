@@ -46,7 +46,7 @@ input::placeholder {
 }
 input:focus {
   outline: none;
-  border: 1px solid salmon;
+  /* border: 1px solid #6a6a6a; */
 }
 
 .auth-card {

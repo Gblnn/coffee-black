@@ -34,7 +34,6 @@ export default function Post(props:Props) {
             .then(res => res.json())
             .then(data => {
               setPosts(data)
-              console.log(typeof posts)
             })
       },[props.id])
 

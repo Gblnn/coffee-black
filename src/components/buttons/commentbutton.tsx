@@ -1,4 +1,4 @@
-import { Button, ConfigProvider, Form, Input, message } from "antd"
+import { Button, ConfigProvider, Form, Input, message, theme } from "antd"
 import { MessagesSquare } from "lucide-react"
 import { useEffect, useState } from "react"
 import Comment from "../comment"
@@ -114,8 +114,8 @@ export default function CommentButton(props:Props){
                 <div style={{display:"flex"}}>
                     <Input className="comment-input" onChange={e=>setComment(e.target.value)} placeholder="Add comment" bordered={false} style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}}></Input>
 
-                    <ConfigProvider theme={{token:{ colorBorder:"none", colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#6a6a6a"}}}>
-                        <Button htmlType="submit" type="primary" style={{}} disabled={!postable} onClick={onPost} loading={loading}>Comment</Button>
+                    <ConfigProvider theme={{algorithm: theme.defaultAlgorithm, token:{colorPrimary:"salmon",colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#9a9a9a", colorText:"#6a6a6a"}}}>
+                        <Button htmlType="submit" type="primary" style={{border:"1px solid rgba(120 120 120/40%)", color:"#8a8a8a"}} disabled={!postable} onClick={onPost} loading={loading}>Comment</Button>
                     </ConfigProvider>
                 </div>
                 
