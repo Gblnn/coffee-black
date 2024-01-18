@@ -87,7 +87,7 @@ export default function Post(props:Props) {
                     
                     <p style={{fontSize:"0.85rem"}}><strong>{props.author}</strong>{showMore? props.bio : props.bio.substring(0, 75)}
                     {
-                    props.bio.length>70?<a className='more' style={{fontSize:"0.8rem",fontWeight:500, marginLeft:"0.35rem",paddingLeft:"0.5rem",paddingRight:"0.5rem", cursor:"pointer"}} onClick={()=>setShowMore(!showMore)}>{showMore?"Less":"More"}</a>:null
+                    props.bio.length>75?<a className='more' style={{fontSize:"0.8rem",fontWeight:500, marginLeft:"0.35rem",paddingLeft:"0.5rem",paddingRight:"0.5rem", cursor:"pointer"}} onClick={()=>setShowMore(!showMore)}>{showMore?"Less":"More"}</a>:null
                     }
                     </p>
                     
