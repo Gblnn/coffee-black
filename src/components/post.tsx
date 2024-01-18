@@ -20,6 +20,7 @@ interface Props {
     bio?:string
     date:Date
     activeuser?:boolean
+    verified?:boolean
 }
 
 export default function Post(props:Props) {
@@ -44,6 +45,10 @@ export default function Post(props:Props) {
                 <div className="post-profile">
                     <img className='pfp' src={props.profile}/>
                     <h3>{props.author}</h3>
+                    {props.author=="coffee"?
+                    <img style={{width:"1.25rem", color:"salmon"}} src='/verified.png'></img>:null
+                    }
+                    
                     <p>•</p>
                     <ReactTimeAgo style={{fontSize:"0.8rem", fontWeight:400}} date={props.date} locale='en' timeStyle="twitter"/>
                 </div>
@@ -80,7 +85,7 @@ export default function Post(props:Props) {
             </div>
             { props.bio==""||props.bio==null ? null :
                 <div style={{border:"",width:"100%"}}>
-                <div className='bio' style={{background:"", height:"fit-content", margin:"0.75rem", marginTop:"0rem",marginBottom:"0.75rem", borderRadius:"0.5rem", display:"flex", alignItems:"center", paddingLeft:"0.25rem",paddingRight:"0.25rem"}}>
+                <div className='bio' style={{height:"fit-content", margin:"0.75rem", marginTop:"0rem",marginBottom:"0.75rem", borderRadius:"0.5rem", display:"flex", alignItems:"center", paddingLeft:"0.25rem",paddingRight:"0.25rem"}}>
                     <div style={{display:"flex", margin:"0.5rem"}}>
 
                     

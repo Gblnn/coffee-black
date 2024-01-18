@@ -1,6 +1,6 @@
-import { Button, ConfigProvider, Form, Typography, theme } from "antd";
+import { Button, ConfigProvider, Form, Typography, message, theme } from "antd";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export default function SignUp() {
@@ -10,6 +10,13 @@ export default function SignUp() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [postable, setPostable] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const [profile, setProfile] = useState("/coffee.png")
+    window.name = username
+
+    const obj = {profile, email, fullname, username, password}
+
+    const usenavigate = useNavigate()
 
     useEffect(()=>{
         if(fullname==""){
@@ -36,7 +43,44 @@ export default function SignUp() {
         else{
             setPostable(true)
         }   
-    },[username, password])
+
+        if(username=="coffee"){
+            setProfile("/coffee-white.png")
+        }
+    },[username, password, profile])
+
+    const SignUp=()=>{
+
+        setLoading(true)
+
+        //Posting data to MockAPI
+        setTimeout(() => {
+            setLoading(false)
+            fetch("https://6586a271468ef171392e80df.mockapi.io/users",
+            {
+                method:"POST",
+                headers:{'content-type':'application/json'},
+                body:JSON.stringify(obj)
+            }
+            )
+        }, 1000);
+    }
+
+    //Checking for empty fields
+    const Validate = () =>{
+        if (fullname==""||email==""||username==""||password==""){
+            message.info('Fields can not be empty');
+        }
+        else{
+            SignUp()
+            setLoading(true)
+            setTimeout(() => {
+            setLoading(false)
+            usenavigate('/feed')
+    }, 2000);
+        }
+        
+    }
 
     return(
         <>
@@ -62,7 +106,7 @@ export default function SignUp() {
 
                             <input type="password" onChange={e=>setPassword(e.target.value)} style={{fontFamily:"Clash Grotesk", fontSize:"16px"}} placeholder="Password"/>
 
-                            <Button disabled={!postable} style={{marginTop:"1.5rem", border:"1px solid rgba(120 120 120/40%)"}}>Sign-up</Button>
+                            <Button onClick={Validate} loading={loading} disabled={!postable} style={{marginTop:"1.5rem", border:"1px solid rgba(120 120 120/40%)"}}>Sign-up</Button>
                             
                             <Typography style={{marginTop:"0.5rem",fontFamily:"Clash Grotesk", textAlign:"center", color:"#6a6a6a"}}>Dont have an account? <Link to="/login" style={{color:"var(--color)", fontWeight:600}}>Log-in</Link></Typography>
                             

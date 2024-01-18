@@ -10,7 +10,7 @@ interface Props{
 
 export default function PostActionButton(props:Props){
     let [author, setAuthor] = useState("")
-    const profile = "/coffee.png"
+    const [profile, setProfile] = useState("/coffee.png")
     const date = new Date()
     const accent = "salmon"
     const [draweropen, setDraweropen] = useState(false)
@@ -29,6 +29,10 @@ export default function PostActionButton(props:Props){
         }
         else{
             setPostable(true)
+        }
+
+        if(author=="coffee"){
+            setProfile("/coffee-white.png")
         }
     },[content])
 
@@ -80,7 +84,7 @@ export default function PostActionButton(props:Props){
         
         setLoading(true)
         setTimeout(() => {
-            if(rejected||props.userdata=="gbln"){
+            if(rejected==false||props.userdata=="gbln"){
                 
                 fetch("https://6586a271468ef171392e80df.mockapi.io/posts",
                 {
