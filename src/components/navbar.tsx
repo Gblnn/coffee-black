@@ -1,4 +1,4 @@
-import { Coffee, Inbox, Search, User } from "lucide-react";
+import { Inbox, Search, User } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import PostActionButton from "./buttons/postactionbutton";
 import CoffeeBean from "./icons/coffeebean";
