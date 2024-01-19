@@ -92,7 +92,7 @@ export default function CommentButton(props:Props){
                     <DrawerDescription></DrawerDescription>
                 </DrawerHeader>
                 <div style={{height:"65svh", border:"", width:"100%", display:"flex", flexFlow:"column",justifyContent:"flex-end", padding:"1rem", gap:"1rem"}}>
-                    <ScrollArea style={{}}>
+                    <ScrollArea style={{height:"100%"}}>
                         {
                     
                         String(posts.length)=="9"?null:
