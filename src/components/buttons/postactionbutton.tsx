@@ -124,7 +124,7 @@ export default function PostActionButton(props:Props){
                     <Select
                         defaultValue="white"
                         bordered={false}
-                        style={{ width: 150, marginLeft:"1rem", fontSize:"16px", color:"#6a6a6a", zIndex:"10" }}
+                        style={{ width: 150, marginLeft:"1rem", fontSize:"16px", color:"#6a6a6a" }}
                         onChange={setColor}
                         options={[
                             { value: 'white', label: 'White' },

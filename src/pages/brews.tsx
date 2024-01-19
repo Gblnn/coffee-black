@@ -1,6 +1,5 @@
 import Post from "@/components/post"
 import { useEffect, useState } from "react"
-import {LoadingOutlined} from '@ant-design/icons'
 
 
 export default function Brews(){
@@ -11,6 +10,7 @@ export default function Brews(){
         .then(res => res.json())
         .then(data => {
             setPosts(data)
+            console.log(data.length)
            
         })
     },[])
@@ -19,14 +19,14 @@ export default function Brews(){
         <div className="container">
             <div className="feed-container">
                 {
-                    
+                    posts.length==9?<><h3>No Brews</h3></>:
                     posts.map((posts)=>(
                         <Post id={posts.id} key={posts.id} author={posts.author} profile={posts.profile} likes={posts.likes} comments={posts.comments} liked={posts.liked} content={posts.content} colorscheme={posts.colorscheme} bio={posts.bio} date={posts.date}/>
                     ))
                 }
                 
             </div>
-            <LoadingOutlined style={{fontSize:"2rem", zIndex:"-1"}}/>
+            {/* <LoadingOutlined style={{fontSize:"2rem", zIndex:"-1"}}/> */}
             <div style={{height:"8rem"}}></div>
 
         </div>
