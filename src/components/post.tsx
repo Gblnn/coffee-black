@@ -45,7 +45,7 @@ export default function Post(props:Props) {
                 <div className="post-profile">
                     <img className='pfp' src={props.profile}/>
                     <h3>{props.author}</h3>
-                    {props.author=="coffee"?
+                    {props.author=="coffee"||props.author=="moozkeen"?
                     <img style={{width:"1.25rem", color:"salmon"}} src='/verified.png'></img>:null
                     }
                     
