@@ -3,7 +3,6 @@ import { MessagesSquare } from "lucide-react"
 import { useEffect, useState } from "react"
 import Comment from "../comment"
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "../ui/drawer"
-import { ScrollArea } from "../ui/scroll-area"
 
 
 interface Props {
@@ -92,7 +91,7 @@ export default function CommentButton(props:Props){
                     <DrawerDescription></DrawerDescription>
                 </DrawerHeader>
                 <div style={{height:"65svh", border:"", width:"100%", display:"flex", flexFlow:"column",justifyContent:"flex-end", padding:"1rem", gap:"1rem"}}>
-                    <ScrollArea style={{height:"100%"}}>
+                    
                         {
                     
                         String(posts.length)=="9"?null:
@@ -102,7 +101,7 @@ export default function CommentButton(props:Props){
                         ))
                     
                         }
-                    </ScrollArea>
+                
                 
                 </div>
 
