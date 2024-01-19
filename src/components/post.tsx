@@ -47,7 +47,7 @@ export default function Post(props:Props) {
                     <h3>{props.author}</h3>
                     {
                     props.author=="coffee"||props.author=="moozkeen"?
-                    <img style={{width:"1.25rem", color:"salmon"}} src='/verified.png'></img>:null
+                    <img style={{width:"1rem", color:"salmon"}} src='/verified.png'></img>:null
                     }
                     
                     <p>•</p>
