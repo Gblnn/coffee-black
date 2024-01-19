@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  --card-color: rgb(245 245 245);
+  --card-color: rgb(255 255 255);
   --nav-color: rgba(255 255 255 /80%);
   --bio-color: rgba(200 200 200 /40%);
   --color: black;
@@ -15,7 +15,7 @@
 }
 
 body {
-  background-color: rgb(220 220 220);
+  background-color: rgb(240 240 240);
   color: black;
 }
 
