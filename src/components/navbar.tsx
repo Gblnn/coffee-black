@@ -13,9 +13,9 @@ export default function Navbar() {
         
 
     return(
-        <div className="nav-container">
+        <div className="nav-container" style={{zIndex:10}}>
 
-            <nav className="nav"> 
+            <nav className="nav" style={{}}> 
                     
                 <Link className={location.pathname=="/feed"?"active nav-item":"nav-item"} to="/feed">  <CoffeeBean fill={location.pathname=="/feed"?accent:"#6a6a6a"} /></Link>
                     

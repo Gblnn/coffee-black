@@ -2,6 +2,7 @@ import CoffeeBean from "@/components/icons/coffeebean";
 import { Button, ConfigProvider, Form, Typography, message, theme } from "antd";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 
 export default function Login() {
@@ -74,7 +75,8 @@ export default function Login() {
     return(
         <>
         <div style={{display:"flex",justifyContent:"center",alignItems:"center",width:"100%",height:"100svh", border:""}}>
-        <div className="auth-card" style={{ height:"fit-content", background:"var(--card-color)", borderRadius:"1rem"}}>
+        <motion.div style={{width:"100%", border:"", display:"flex", alignItems:"center", justifyContent:"center"}} initial={{opacity:0}} whileInView={{opacity:1}}>
+            <div className="auth-card" style={{ height:"fit-content", background:"var(--card-color)", borderRadius:"1rem"}}>
             <div style={{padding:"1.5rem", border:"", height:"100%"}}>
                 <div style={{display:"flex", gap:"0.5rem"}}>
                 {/* <img style={{width:"2.5rem"}} src="/coffee-bag-color.png"/> */}
@@ -101,7 +103,8 @@ export default function Login() {
                 </ConfigProvider>
                 
             </div>
-        </div>
+            </div>
+            </motion.div>
         </div>
         
         </>

@@ -1,7 +1,7 @@
 import { Button, ConfigProvider, Form, Typography, message, theme } from "antd";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { motion } from "framer-motion";
 
 export default function SignUp() {
 
@@ -85,7 +85,7 @@ export default function SignUp() {
     return(
         <>
         <div style={{display:"flex",justifyContent:"center",alignItems:"center",width:"100%",height:"100svh", border:""}}>
-
+        <motion.div style={{width:"100%", border:"", display:"flex", alignItems:"center", justifyContent:"center"}} initial={{opacity:0}} whileInView={{opacity:1}}>
             <div className="auth-card" style={{ height:"fit-content", background:"var(--card-color)", borderRadius:"1rem"}}>
 
                 <div style={{padding:"1.5rem", border:"", height:"100%"}}>
@@ -117,6 +117,7 @@ export default function SignUp() {
                     
                 </div>
             </div>
+            </motion.div>
         </div>
         
         </>
