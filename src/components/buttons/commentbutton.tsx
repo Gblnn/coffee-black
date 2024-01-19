@@ -81,7 +81,7 @@ export default function CommentButton(props:Props){
         <>
         <div style={{display:"flex", alignItems:"center", gap:"0.25rem"}}>
             <button onClick={setDrawer} className='footer-button'><MessagesSquare style={{marginTop:"0.2rem"}} width='1.25rem' color='#6a6a6a'/></button>
-            <p style={{fontSize:"0.9rem", fontWeight:"600", marginTop:"0.2rem"}}>{props.comments}</p>
+            <p style={{fontSize:"0.85rem", fontWeight:"600", marginTop:"0.2rem"}}>{props.comments}</p>
         </div>
 
         <Drawer open={draweropen}>
