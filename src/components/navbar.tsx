@@ -1,4 +1,4 @@
-import { Inbox, Search, User } from "lucide-react";
+import { Coffee, Inbox, User } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import PostActionButton from "./buttons/postactionbutton";
 import CoffeeBean from "./icons/coffeebean";
@@ -19,7 +19,7 @@ export default function Navbar() {
                     
                 <Link className={location.pathname=="/feed"?"active nav-item":"nav-item"} to="/feed">  <CoffeeBean fill={location.pathname=="/feed"?accent:"#6a6a6a"} /></Link>
                     
-                <Link className={location.pathname=="/brews"?"active nav-item":"nav-item"} to="/brews"><Search stroke={location.pathname=="/brews"?accent:"#6a6a6a"}/></Link>
+                <Link className={location.pathname=="/brews"?"active nav-item":"nav-item"} to="/brews"><Coffee stroke={location.pathname=="/brews"?accent:"#6a6a6a"}/></Link>
 
 
                 <PostActionButton userdata={user_data}/>
