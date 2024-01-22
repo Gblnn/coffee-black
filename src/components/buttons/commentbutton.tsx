@@ -110,7 +110,7 @@ export default function CommentButton(props:Props){
                 <Form style={{width:"100%"}}>
                 
 
-                <div style={{display:"flex"}}>
+                <div style={{display:"flex", bottom:0}}>
                     <Input className="comment-input" onChange={e=>setComment(e.target.value)} placeholder="Add comment" bordered={false} style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}}></Input>
 
                     <ConfigProvider theme={{algorithm: theme.defaultAlgorithm, token:{colorPrimary:"salmon",colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#9a9a9a", colorText:"#6a6a6a"}}}>
