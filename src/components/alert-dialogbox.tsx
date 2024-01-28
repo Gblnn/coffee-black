@@ -10,6 +10,7 @@ interface Props{
     onCancel?:any
     destructive?:boolean
     actionbutton?:any
+    actionicon:any
 }
 
 export default function AlertDialogBox(props:Props){
@@ -24,7 +25,7 @@ export default function AlertDialogBox(props:Props){
 
                 <AlertDialogFooter>
                     <Button style={{background:"rgba(120 120 120/ 15%)", color:"var(--color)"}} onClick={props.onCancel} className="alert-dialog-btn">Cancel</Button>
-                    <Button onClick={props.onConfirm} className="alert-dialog-btn" style={{ background:props.destructive?"rgba(120 120 120/ 15%)":"var(--color)", color:props.destructive?"#e11d48":"var(--card-color)"}}>{props.actionbutton?props.actionbutton:"Confirm"}</Button>
+                    <Button onClick={props.onConfirm} className="alert-dialog-btn" style={{ background:props.destructive?"rgba(120 120 120/ 15%)":"var(--color)", color:props.destructive?"#e11d48":"var(--card-color)"}}>{props.actionicon?props.actionicon:null}{props.actionbutton?props.actionbutton:"Confirm"}</Button>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
