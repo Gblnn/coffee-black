@@ -32,8 +32,8 @@ export default function ChatProfile(props:Props){
                     !loaded?
                     <>
                     <div style={{display:"flex", flexFlow:"column", gap:"0.5rem"}}>
-                    <div className='animate-pulse' style={{width:"10rem", height:"0.5rem", background:"rgba(120 120 120/ 20%)"}}></div>
-                    <div className='animate-pulse' style={{width:"10rem", height:"0.5rem", background:"rgba(120 120 120/ 20%)"}}></div>
+                    <div className='animate-pulse' style={{display:"flex",width:"12rem", height:"0.5rem", background:"rgba(120 120 120/ 20%)"}}></div>
+                    <div className='animate-pulse' style={{width:"6rem", height:"0.5rem", background:"rgba(120 120 120/ 20%)"}}></div>
                     </div>
                     
                     </>
