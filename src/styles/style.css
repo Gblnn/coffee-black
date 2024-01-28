@@ -59,7 +59,7 @@ input:focus {
 .inbox {
   padding: 1.5rem;
   padding-bottom: 6rem;
-  background: var(--chat-bg);
+  /* background: var(--chat-bg); */
 }
 
 .inbox-chats {

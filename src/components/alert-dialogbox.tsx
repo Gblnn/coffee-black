@@ -17,7 +17,7 @@ export default function AlertDialogBox(props:Props){
     return(
         <>
         <AlertDialog open={props.open}>
-            <AlertDialogContent style={{background:"var(--card-color)", border:'1px solid rgba(120 120 120/ 50%)'}}>
+            <AlertDialogContent style={{background:"var(--card-color)", border:'none'}}>
                 <AlertDialogHeader style={{color:"var(--color)"}}>
                     <AlertDialogTitle >{props.title}</AlertDialogTitle>
                     <AlertDialogDescription style={{textAlign:'center'}}>{props.desc}</AlertDialogDescription>
