@@ -25,6 +25,7 @@ export default function Post(props:Props) {
 
     const [posts, setPosts] = useState("")
     const [showMore, setShowMore] = useState(false);
+    const [loaded, setLoaded] = useState(false)
 
     useEffect(()=>{
         fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments?postid="+props.id)
@@ -34,23 +35,51 @@ export default function Post(props:Props) {
             })
       },[props.id])
 
+    useEffect(()=>{
+        setTimeout(()=>{
+            setLoaded(true)
+        },1000)   
+    },[])
+
+      const onLoad = () => {
+        // setLoaded(true)
+      }
+
     return(
         <>
+        {
         <div className="post">
         <div className="post-header">
             <div className="post-profile">
-                    <img className='pfp' src={props.profile}/>
-                    <h3>{props.author}</h3>
                 {
-                props.author=="coffee"||props.author=="moozkeen"?
-                <img style={{width:"1rem", color:"salmon"}} src='/verified.png'></img>:null
-                }
-                
-                <p>•</p>
+                    !loaded?
+                    <>
+                    <div className='animate-pulse' style={{width:"1.5rem", height:"1.5rem", background:"rgba(120 120 120/ 20%)", borderRadius:"50%"}}></div>
+                    <div style={{width:"10rem", height:"1rem", background:"rgba(120 120 120/ 20%)", borderRadius:"0.25rem"}}></div>
+                    </>
+                    
+                    :
+                    <>
+                    <img onLoad={onLoad} className='pfp' src={props.profile}/>
+                    <h3>{props.author}</h3>
+                    {
+                        props.author=="coffee"||props.author=="moozkeen"?
+                        <img style={{width:"1rem", color:"salmon"}} src='/verified.png'></img>:null
+                    }
+                    <p>•</p>
                 <ReactTimeAgo style={{fontSize:"0.8rem", fontWeight:400}} date={props.date} locale='en' timeStyle="twitter"/>
+                    </>
+                    
+                }
+                    
+                
+                
+                
             </div>
             
-            <div className="post-header-more">
+            {
+                loaded?
+                <div className="post-header-more">
                 {
                     props.activeuser?
                     <MoreButton id={props.id}/>
@@ -58,12 +87,21 @@ export default function Post(props:Props) {
                     <OtherMoreButton/>
                 }
                 
-            </div>
+                </div>
+                :null
+            }
+            
         </div>
         <div className='content-container'>
-            <div id={props.colorscheme} className="post-content">
+            {
+                !loaded?
+                <div className='post-content animate-pulse' style={{background:"rgba(120 120 120/ 20%)"}}></div>
+                :
+                <div id={props.colorscheme} className="post-content">
                 <p id={props.colorscheme} className='content'>{props.content}</p>
             </div>
+            }
+            
         </div>
         
         <div className="post-footer" style={{justifyContent:"space-between"}}>
@@ -81,7 +119,8 @@ export default function Post(props:Props) {
             
             
         </div>
-        { props.bio==""||props.bio==null ? null :
+        { 
+            props.bio==""||props.bio==null||!loaded ? null :
             <div style={{border:"",width:"100%"}}>
             <div className='bio' style={{height:"fit-content", margin:"0.75rem", marginTop:"0rem",marginBottom:"0.75rem", borderRadius:"0.5rem", display:"flex", alignItems:"center", paddingLeft:"0.25rem",paddingRight:"0.25rem"}}>
                 <div style={{display:"flex", margin:"0.5rem"}}>
@@ -96,10 +135,13 @@ export default function Post(props:Props) {
                 </div>
                 
             </div>
-        </div>
+            </div>
         }
         
-    </div>   
+        </div> 
+        
+        }
+          
     </>
     )
 }
