@@ -38,7 +38,7 @@ export default function Post(props:Props) {
     useEffect(()=>{
         setTimeout(()=>{
             setLoaded(true)
-        },1000)   
+        },1500)   
     },[])
 
       const onLoad = () => {
@@ -103,8 +103,11 @@ export default function Post(props:Props) {
             }
             
         </div>
-        
-        <div className="post-footer" style={{justifyContent:"space-between"}}>
+        {
+            !loaded?
+            <div style={{height:"3rem", width:"4rem"}}></div>
+            :
+            <div className="post-footer" style={{justifyContent:"space-between"}}>
             <div className='footer-controls'>
 
                 <LikeButton id={props.id} liked={props.liked} likecount={props.likes}/>
@@ -119,6 +122,8 @@ export default function Post(props:Props) {
             
             
         </div>
+        }
+        
         { 
             props.bio==""||props.bio==null||!loaded ? null :
             <div style={{border:"",width:"100%"}}>
