@@ -38,7 +38,7 @@ export default function Post(props:Props) {
     useEffect(()=>{
         setTimeout(()=>{
             setLoaded(true)
-        },1000)   
+        },1500)   
     },[])
 
       const onLoad = () => {

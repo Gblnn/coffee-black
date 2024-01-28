@@ -14,7 +14,7 @@ export default function ChatProfile(props:Props){
     useEffect(()=>{
         setTimeout(()=>{
             setLoaded(true)
-        },1000)   
+        },1500)   
     },[])
     return(
     <>
