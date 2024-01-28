@@ -14,6 +14,7 @@ export default function MoreButton(props:Props){
     const [dialogtitle, setDialogtitle] = useState("")
     const [dialogdesc, setdialogdesc] = useState("")
     const [action, setAction] = useState("")
+    const [actionbutton, setActionbutton] = useState("")
 
 
     const setDropdown = () =>{
@@ -40,6 +41,7 @@ export default function MoreButton(props:Props){
       setDialogtitle("Edit Post?")
       setdialogdesc("Confirm edit post?")
       setAction("edit")
+      setActionbutton("Edit")
     }
 
     const handleDelete = () => {
@@ -47,6 +49,7 @@ export default function MoreButton(props:Props){
       setdialogdesc("This action can not be undone")
       setDialog(true)
       setAction("delete")
+      setActionbutton("Delete")
     }
 
     const execEdit = () => {
@@ -120,7 +123,7 @@ export default function MoreButton(props:Props){
             
         </ConfigProvider>
         {/* <DialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel} onConfirm={handleConfirm} action={action}/> */}
-        <AlertDialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel} onConfirm={handleConfirm} action={action} />
+        <AlertDialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel} onConfirm={handleConfirm} action={action} actionbutton={actionbutton} />
         </>
     )
 }

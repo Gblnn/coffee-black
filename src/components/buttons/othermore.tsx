@@ -13,6 +13,7 @@ export default function OtherMoreButton(){
     const [dialog, setDialog] = useState(false)
     const [dialogtitle, setDialogtitle] = useState("")
     const [dialogdesc, setdialogdesc] = useState("")
+    const [actionbutton, setActionbutton] = useState("")
 
 
     const setDropdown = () =>{
@@ -52,6 +53,7 @@ export default function OtherMoreButton(){
       setDialogtitle("Report Post?")
       setdialogdesc("Report selected Post?")
       setDialog(true)
+      setActionbutton("Report")
     }
 
     // const execEdit = () => {
@@ -124,7 +126,7 @@ export default function OtherMoreButton(){
 
             
         </ConfigProvider>
-        <AlertDialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel} destructive={true}/>
+        <AlertDialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel} destructive={true} actionbutton={actionbutton}/>
         
         </>
     )
