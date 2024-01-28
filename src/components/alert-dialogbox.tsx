@@ -10,7 +10,7 @@ interface Props{
     onCancel?:any
     destructive?:boolean
     actionbutton?:any
-    actionicon:any
+    actionicon?:any
 }
 
 export default function AlertDialogBox(props:Props){
