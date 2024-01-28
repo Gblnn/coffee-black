@@ -107,7 +107,6 @@ export default function Post(props:Props) {
             !loaded?
             <div style={{height:"3rem", width:"100%", border:'', display:'flex', alignItems:'center', justifyContent:"space-between"}}>
                 <div className='animate-pulse' style={{marginLeft:"1rem",width:"5rem", height:"1.5rem", background:"rgba(120 120 120/ 20%)", borderRadius:"0.25rem"}}></div>
-                <div className='animate-pulse' style={{marginRight:"1rem",width:"2rem", height:"1.5rem", background:"rgba(120 120 120/ 20%)", borderRadius:"0.25rem"}}></div>
             </div>
             :
             <div className="post-footer" style={{justifyContent:"space-between"}}>
