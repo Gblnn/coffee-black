@@ -108,7 +108,7 @@ export default function SignUp() {
 
                             <Button onClick={Validate} loading={loading} disabled={!postable} style={{marginTop:"1.5rem", border:"1px solid rgba(120 120 120/40%)"}}>SIGN-UP</Button>
                             
-                            <Typography style={{marginTop:"0.5rem",fontFamily:"Clash Grotesk", textAlign:"center", color:"#6a6a6a"}}>Dont have an account? <Link to="/login" style={{color:"var(--color)", fontWeight:600}}>Log-in</Link></Typography>
+                            <Typography style={{marginTop:"0.5rem",fontFamily:"Clash Grotesk", textAlign:"center", color:"#6a6a6a"}}>Already have an account? <Link to="/login" style={{color:"var(--color)", fontWeight:600}}>Log-in</Link></Typography>
                             
                             </div>
                             

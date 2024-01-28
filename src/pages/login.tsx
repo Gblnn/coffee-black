@@ -81,7 +81,7 @@ export default function Login() {
                 <div style={{display:"flex", gap:"0.5rem"}}>
                 {/* <img style={{width:"2.5rem"}} src="/coffee-bag-color.png"/> */}
                 <CoffeeBean/>
-                <h1 style={{fontWeight:600, fontSize:"1.75rem"}}>COFFEE</h1>
+                <h1 className="coffee" style={{fontWeight:600, fontSize:"1.75rem"}}>COFFEE</h1>
                 </div>
                 
                 <ConfigProvider theme={{algorithm: theme.darkAlgorithm,token:{colorPrimary:"salmon",colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#9a9a9a", colorText:"var(--color)"} }}>

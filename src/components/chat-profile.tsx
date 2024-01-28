@@ -6,6 +6,7 @@ interface Props {
     user:string
     message:string
     notify?:boolean
+    onClick?:any
 }
 
 export default function ChatProfile(props:Props){
@@ -18,7 +19,7 @@ export default function ChatProfile(props:Props){
     },[])
     return(
     <>
-    <div className="chat-profile" style={{width:"100%", border:"", display:"flex", alignItems:"center", gap:"0.5rem", justifyContent:"space-between"}}>
+    <button onClick={props.onClick} className="chat-profile" style={{width:"100%", border:"", display:"flex", alignItems:"center", gap:"0.5rem", justifyContent:"space-between"}}>
         <div style={{display:"flex", alignItems:"center", gap:"0.5rem"}}>
             {
                 !loaded?
@@ -39,10 +40,10 @@ export default function ChatProfile(props:Props){
                     </>
                     
                     :
-                    <>
-                    <p style={{fontWeight:800, fontSize:"0.85rem"}}>{props.user}</p>
-                    <p style={{fontSize:"0.85rem", opacity:0.5}}>{props.message}</p>
-                    </>
+                    <div style={{display:"flex", justifyContent:"flex-start", flexFlow:"column"}}>
+                    <p style={{textAlign:"left",fontWeight:800, fontSize:"0.85rem"}}>{props.user}</p>
+                    <p style={{fontSize:"0.85rem", opacity:0.5, border:"", textAlign:"left", width:"8rem"}}>{props.message}</p>
+                    </div>
                     
                 }
                 
@@ -56,7 +57,7 @@ export default function ChatProfile(props:Props){
         
         
                                 
-    </div>
+    </button>
     </>
     )
 }

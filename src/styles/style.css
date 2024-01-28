@@ -4,7 +4,8 @@
   --nav-color: rgba(255 255 255 /90%);
   --bio-color: rgba(200 200 200 /20%);
   --chat-bg: linear-gradient(white, gray);
-  --semi: rgb(240 240 240);
+  --semi: rgb(245 245 245);
+  --hemi: rgb(220 220 220);
   --color: black;
 }
 
@@ -49,6 +50,13 @@ input::placeholder {
 input:focus {
   outline: none;
   /* border: 1px solid #6a6a6a; */
+}
+
+.coffee {
+  background: -webkit-linear-gradient(#eee, #1a1a1a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .auth-card {
@@ -99,7 +107,7 @@ input:focus {
 }
 
 .chat-profile:focus {
-  background: #2a2a2a;
+  background: rgba(120 120 120 /20%);
 }
 
 .hoverable {
@@ -212,7 +220,8 @@ body::-webkit-scrollbar-thumb {
     --nav-color: rgba(30 30 30 /80%);
     --bio-color: rgba(40 40 40 /80%);
     --chat-bg: linear-gradient(black, #1a1a1a);
-    --semi: #1a1a1a;
+    --semi: #191919;
+    --hemi: #1f1f1f;
     --color: rgb(220 220 220);
   }
   .comment-input::placeholder {
