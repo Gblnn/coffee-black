@@ -109,7 +109,7 @@ input:focus {
 }
 
 .hoverable:hover {
-  background: rgba(120 120 120 /20%);
+  background: rgba(120 120 120 /10%);
 }
 
 .more {
