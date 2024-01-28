@@ -1,4 +1,4 @@
-import DialogBox from "@/components/dialogbox";
+import AlertDialogBox from "@/components/alert-dialogbox";
 import { Button, ConfigProvider, theme } from "antd";
 import { LogOut } from "lucide-react";
 import { useState } from "react";
@@ -33,7 +33,7 @@ export default function Saved(){
             </ConfigProvider>
         </div>
         
-        <DialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel} onConfirm={handleConfirm}/>
+        <AlertDialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel} onConfirm={handleConfirm}/>
         
         </>
     )

@@ -3,6 +3,8 @@
   --card-color: rgb(255 255 255);
   --nav-color: rgba(255 255 255 /90%);
   --bio-color: rgba(200 200 200 /20%);
+  --chat-bg: linear-gradient(white, gray);
+  --semi: rgb(240 240 240);
   --color: black;
 }
 
@@ -15,7 +17,7 @@
 }
 
 body {
-  background-color: rgb(240 240 240);
+  background-color: rgb(250 250 250);
   color: black;
 }
 
@@ -57,6 +59,30 @@ input:focus {
 .inbox {
   padding: 1.5rem;
   padding-bottom: 6rem;
+  background: var(--chat-bg);
+}
+
+.inbox-chats {
+  width: 100%;
+  height: 100%;
+  background: var(--card-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.chat-profile {
+  padding: 0.5rem;
+  border-radius: 1rem;
+  transition: 0.3;
+  cursor: pointer;
+}
+
+.chat-profile:hover {
+  background: rgba(120 120 120 /10%);
+}
+
+.chat-profile:focus {
+  background: #2a2a2a;
 }
 
 .hoverable {
@@ -86,6 +112,12 @@ input:focus {
   border: 1px solid rgba(240 240 240 / 20%);
   background: #0a0a0a;
   color: #9a9a9a;
+}
+
+.alert-dialog-btn {
+  width: 100%;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .dropdown {
@@ -127,12 +159,25 @@ input:focus {
   display: flex;
   flex-flow: column-reverse;
   align-items: center;
-
+  background: none;
   /* border: 1px solid red; */
   width: 95%;
   margin-top: 4rem;
   margin-bottom: 2rem;
   gap: 0.5rem;
+}
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: salmon;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -142,11 +187,13 @@ input:focus {
 
   body {
     color-scheme: dark;
-    background: black;
+    background: #111111;
     color: rgba(245 245 245 /70%);
     --card-color: #151515;
     --nav-color: rgba(30 30 30 /80%);
     --bio-color: rgba(40 40 40 /80%);
+    --chat-bg: linear-gradient(black, #1a1a1a);
+    --semi: #1a1a1a;
     --color: rgb(220 220 220);
   }
   .comment-input::placeholder {
@@ -166,10 +213,15 @@ input:focus {
     width: 600px;
   }
   .inbox {
-    padding-left: 10rem;
-    padding-right: 10rem;
+    padding-left: 9rem;
+    padding-right: 9rem;
     padding-bottom: 2rem;
     padding-top: 2rem;
+  }
+  .inbox-chats {
+    width: 32ch;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 }
 

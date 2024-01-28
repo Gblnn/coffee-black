@@ -1,7 +1,7 @@
 import { ConfigProvider, Dropdown, MenuProps, message, theme } from "antd";
 import { MoreHorizontal } from "lucide-react";
 import { useState } from "react";
-import DialogBox from "../dialogbox";
+import AlertDialogBox from "../alert-dialogbox";
 
 interface Props{
   id:number
@@ -15,6 +15,7 @@ export default function MoreButton(props:Props){
     const [dialogdesc, setdialogdesc] = useState("")
     const [action, setAction] = useState("")
 
+
     const setDropdown = () =>{
         if(!dropdownopen){
             setDropdownopen(true)
@@ -24,6 +25,8 @@ export default function MoreButton(props:Props){
         }
         
     }
+
+ 
 
     const Reload = () =>{
       setTimeout(()=>{
@@ -47,7 +50,7 @@ export default function MoreButton(props:Props){
     }
 
     const execEdit = () => {
-
+      setDialog(false)
     }
 
     const execDelete = () => {
@@ -65,7 +68,7 @@ export default function MoreButton(props:Props){
 
     const handleConfirm = () => {
       if(action=="edit"){
-        execEdit
+        execEdit()
       }
       if(action=="delete"){
         execDelete()
@@ -96,18 +99,28 @@ export default function MoreButton(props:Props){
         
     ];
 
+
     
 
     return(
         <>
         <ConfigProvider theme={{algorithm: theme.darkAlgorithm}}>
-            <Dropdown menu={{items}} trigger={['click']}>
-                <button className='flex' onClick={setDropdown}>
-                    <MoreHorizontal color='#8a8a8a' width="1.25rem"/>
-                </button>
-            </Dropdown>
+
+    
+          <Dropdown menu={{items}} trigger={['click']}>
+          <button className='flex' onClick={setDropdown}>
+            <MoreHorizontal color='#8a8a8a' width="1.25rem"/>
+          </button>
+        </Dropdown>
+        
+            
+
+            
+
+            
         </ConfigProvider>
-        <DialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel} onConfirm={handleConfirm} action={action}/>
+        {/* <DialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel} onConfirm={handleConfirm} action={action}/> */}
+        <AlertDialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel} onConfirm={handleConfirm} action={action} />
         </>
     )
 }

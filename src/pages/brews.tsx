@@ -17,7 +17,7 @@ export default function Brews(){
     return(
         <>
         <div className="container">
-            <div className="feed-container">
+            <div className="feed-container" style={{marginTop:"5%"}}>
                 {
                     posts.length==9?<div style={{display:"flex",justifyContent:"center", alignItems:"center",border:"", width:"100%", height:"75svh"}}><h3 style={{border:""}}>No Brews.</h3></div>:
                     posts.map((posts)=>(
@@ -27,7 +27,7 @@ export default function Brews(){
                 
             </div>
             {/* <LoadingOutlined style={{fontSize:"2rem", zIndex:"-1"}}/> */}
-            <div style={{height:"8rem"}}></div>
+            <div style={{}}></div>
 
         </div>
         </>
