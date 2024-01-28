@@ -19,8 +19,8 @@ export default function Posts(){
                         
                         <div className="chats" style={{overflowY:"auto", width:"100%", height:"100%", border:"", paddingTop:"1rem"}}>
                             <ChatProfile profile="/coffee.png" user="gbln___" message="Preview" notify={true}/>
-                            <ChatProfile profile="/coffee-bag-color.png" user="moozkeen" message="Preview"/>
-                            <ChatProfile profile="/coffee-bag-color.png" user="Dummy" message="Preview" notify={true}/>
+                            <ChatProfile profile="/coffee-bag-color.png" user="moozkeen" message="Preview" notify={true}/>
+                            <ChatProfile profile="/coffee-bag-color.png" user="Dummy" message="Preview"/>
                             <ChatProfile profile="/coffee-bag-color.png" user="Dummy" message="Preview"/>
                             <ChatProfile profile="/coffee-bag-color.png" user="Dummy" message="Preview"/>
                             <ChatProfile profile="/coffee-bag-color.png" user="Dummy" message="Preview"/>
