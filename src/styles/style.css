@@ -159,13 +159,14 @@ input:focus {
 
 .container {
   width: 100%;
-  /* border: 1px solid white; */
+  /* border: 1px solid; */
   padding: 0;
   margin: 0;
   display: flex;
   flex-flow: column;
   align-items: center;
   align-self: center;
+  background: var(--chat-bg);
 }
 
 .feed-container {
@@ -178,6 +179,7 @@ input:focus {
   margin-top: 4rem;
   margin-bottom: 2rem;
   gap: 0.5rem;
+  /* background: var(--chat-bg); */
 }
 
 /* Custom Scrollbar */
