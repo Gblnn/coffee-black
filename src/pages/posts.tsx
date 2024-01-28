@@ -25,7 +25,7 @@ export default function Posts(){
                         </div>
                     </div>
                 </div>
-                <div style={{width:"70%", height:"100%", border:''}}>
+                <div className="chat-window" style={{width:"70%", height:"100%", border:''}}>
 
                 </div>
                 

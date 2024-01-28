@@ -70,6 +70,10 @@ input:focus {
   padding: 1.5rem;
 }
 
+.chat-window {
+  display: none;
+}
+
 .chats::-webkit-scrollbar {
   width: 0.5em;
 }
@@ -237,6 +241,9 @@ body::-webkit-scrollbar-thumb {
     width: 32ch;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+  }
+  .chat-window {
+    display: flex;
   }
 }
 
