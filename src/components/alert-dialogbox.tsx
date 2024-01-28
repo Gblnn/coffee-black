@@ -23,7 +23,7 @@ export default function AlertDialogBox(props:Props){
 
                 <AlertDialogFooter>
                     <Button style={{background:"rgba(120 120 120/ 15%)", color:"var(--color)"}} onClick={props.onCancel} className="alert-dialog-btn">Cancel</Button>
-                    <Button onClick={props.onConfirm} className="alert-dialog-btn" style={{ background:props.destructive?"crimson":"orange", color:"var(--card-color)"}}>Confirm</Button>
+                    <Button onClick={props.onConfirm} className="alert-dialog-btn" style={{ background:props.destructive?"tomato":"orange", color:"var(--card-color)"}}>Confirm</Button>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
