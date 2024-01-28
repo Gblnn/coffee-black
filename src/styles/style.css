@@ -170,7 +170,7 @@ input:focus {
   flex-flow: column;
   align-items: center;
   align-self: center;
-  background: var(--chat-bg);
+  /* background: var(--chat-bg); */
 }
 
 .feed-container {
