@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 
 export default function Feed(){
 
-    const [posts, setPosts] = useState<any[]>([])
+    
     const user_data = window.name
 
-
+    const [posts, setPosts] = useState<any[]>([])
     useEffect(()=>{
         fetch("https://6586a271468ef171392e80df.mockapi.io/posts")
             .then(res => res.json())
