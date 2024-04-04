@@ -98,13 +98,20 @@ export default function CommentButton(props:Props){
                     
                         {
                     
-                        String(posts.length)=="9"?null:
+                        String(posts.length)=="9"?<>
+                        <div style={{display:"flex", border:"", height:"100%", justifyContent:"center", alignItems:"center", flexFlow:'column'}}>
+                            <p style={{fontWeight:600, fontSize:"1.5rem"}}>No Comments</p>
+                            <p style={{fontSize:"0.8rem"}}>Be the first to comment</p>
+                        </div>
+                        </>:
                     
                         posts.map((post)=>(
                             <Comment date={post.date} id={post.id} key={post.id} author={post.user} comment={post.comment}/>
                         ))
                     
                         }
+
+                        
                 
                 
                 </div>
