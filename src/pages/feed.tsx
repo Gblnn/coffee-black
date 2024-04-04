@@ -26,23 +26,34 @@ export default function Feed(){
 
     return(
         <>
+        {!loaded?
+        <div style={{width:"100%", height:"100svh", display:"flex", justifyContent:"center", alignItems:"center"}}>
+            <LoadingOutlined style={{fontSize:"2rem", zIndex:"-1", position:"absolute", }}/>
+        </div>
+        :null}
+        <div className="container" style={{display:"flex", alignItems:'center', justifyContent:"center"}}>
 
-        <div className="container" style={{display:"flex", justifyContent:"center"}}>
-            <div className="feed-container">
-                {
-                    posts.map((posts)=>(
-                        
-                        <motion.div key={posts.id} style={{width:"100%", border:"", display:"flex", alignItems:"center", justifyContent:"center"}} initial={{opacity:0}} whileInView={{opacity:1}}>
-                            <Post id={posts.id} key={posts.id} author={posts.author} profile={posts.profile} likes={posts.likes} comments={posts.comments} liked={posts.liked} content={posts.content} colorscheme={posts.colorscheme} bio={posts.bio} activeuser={user_data==posts.author} date={posts.date}/>
-                        </motion.div>
-                    
-                        
-                        
-                    ))
-                }
+        
+
+        {loaded?
+        <div className="feed-container">
+        {
+            posts.map((posts)=>(
                 
-            </div>
-            {!loaded?<LoadingOutlined style={{fontSize:"2rem", zIndex:"-1", position:"absolute", top:"40%"}}/>:null}
+                <motion.div key={posts.id} style={{width:"100%", border:"", display:"flex", alignItems:"center", justifyContent:"center"}} initial={{opacity:0}} whileInView={{opacity:1}}>
+                    <Post id={posts.id} key={posts.id} author={posts.author} profile={posts.profile} likes={posts.likes} comments={posts.comments} liked={posts.liked} content={posts.content} colorscheme={posts.colorscheme} bio={posts.bio} activeuser={user_data==posts.author} date={posts.date}/>
+                </motion.div>
+            
+                
+                
+            ))
+        }
+        
+    </div>
+    :null
+        }
+            
+            
             
             <div style={{height:"6rem"}}></div>
 
