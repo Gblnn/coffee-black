@@ -17,7 +17,7 @@ export default function LikeButton(props:Props){
     
     useEffect(()=>{
         if(liked == false){
-            setLikestate("#6a6a6a")
+            setLikestate("#8a8a8a")
         }
         if(liked == true){
             setLikestate("salmon")

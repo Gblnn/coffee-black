@@ -26,7 +26,7 @@ export default function SaveButton(){
     return(
         <>
         <button onClick={onSave} style={{marginTop:"0.25rem"}} className="hoverable">
-            <Bookmark width="1.4rem" fill={savestate} color='#6a6a6a'/>
+            <Bookmark width="1.4rem" fill={savestate} color='#8a8a8a'/>
         </button>
         </>
     )
