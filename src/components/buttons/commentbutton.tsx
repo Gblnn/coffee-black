@@ -84,7 +84,7 @@ export default function CommentButton(props:Props){
     return(
         <>
         <div style={{display:"flex", alignItems:"center", gap:"0.25rem"}}>
-            <button onClick={setDrawer} className='footer-button'><MessagesSquare style={{marginTop:"0.2rem"}} width='1.25rem' color='#6a6a6a'/></button>
+            <button onClick={setDrawer} className='footer-button hoverable'><MessagesSquare style={{marginTop:"0.2rem"}} width='1.25rem' color='#6a6a6a'/></button>
             <p style={{fontSize:"0.85rem", fontWeight:"600", marginTop:"0.2rem"}}></p>
         </div>
 
@@ -115,7 +115,7 @@ export default function CommentButton(props:Props){
                 
 
                 <div style={{display:"flex", bottom:0}}>
-                    <input className="comment-input" value={comment} onChange={e=>setComment(e.target.value)} placeholder="Add comment" style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%", background:"none", border:"none"}}></input>
+                    <input className="comment-input" value={comment} onChange={e=>setComment(e.target.value)} placeholder="Add comment" style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"100%", background:"none", border:"none", marginRight:"1rem"}}></input>
 
                     <ConfigProvider theme={{algorithm: theme.defaultAlgorithm, token:{colorPrimary:"salmon",colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#9a9a9a", colorText:"#6a6a6a"}}}>
                         <button type="submit" style={{paddingLeft:"1.5rem", paddingRight:"1.5rem", display:"flex", gap:"0.5rem", alignItems:"center"}} disabled={!postable} onClick={onPost} className={postable?"active-btn":"disabled"}>{loading?<LoadingOutlined/>:null}Comment</button>

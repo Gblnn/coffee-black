@@ -112,7 +112,7 @@ input:focus {
 }
 
 .hoverable {
-  transition: 0.3s;
+  transition: 0.5s;
   border-radius: 0.5rem;
   padding: 0.2rem;
 }

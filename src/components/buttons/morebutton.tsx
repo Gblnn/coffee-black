@@ -114,7 +114,7 @@ export default function MoreButton(props:Props){
 
     
           <Dropdown menu={{items}} trigger={['click']}>
-          <button className='flex' onClick={setDropdown}>
+          <button className='flex hoverable' onClick={setDropdown} style={{paddingLeft:"0.5rem", paddingRight:"0.5rem"}}>
             <MoreHorizontal color='#8a8a8a' width="1.25rem"/>
           </button>
         </Dropdown>
