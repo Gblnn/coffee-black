@@ -1,13 +1,13 @@
-import { ConfigProvider, Form, message, theme } from "antd"
+import { LoadingOutlined } from '@ant-design/icons'
+import { ConfigProvider, Form, theme } from "antd"
 import { MessagesSquare } from "lucide-react"
 import { useEffect, useState } from "react"
 import Comment from "../comment"
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "../ui/drawer"
-import {LoadingOutlined} from '@ant-design/icons'
 
 interface Props {
     postid:number
-    comments:string
+    comments?:string
 }
 
 export default function CommentButton(props:Props){
@@ -20,6 +20,7 @@ export default function CommentButton(props:Props){
     const [loading, setLoading] = useState(false)
     const [draweropen, setDraweropen] = useState(false)
     const [postable, setPostable] = useState(false)
+    const [update, setUpdate] = useState(false)
 
     //Validation
     useEffect(()=>{
@@ -31,49 +32,52 @@ export default function CommentButton(props:Props){
         }
     },[comment])
 
-    const setDrawer = () =>{
-        if(!draweropen){
-            setDraweropen(true)
-            fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments?postid="+postid)
+    
+
+    useEffect(()=>{
+        fetchComments()
+    },[update])
+
+    const fetchComments = async () => {
+        await fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments?postid="+postid)
             .then(res => res.json())
             .then(data => {
             setPosts(data)
             console.log(data)
             })
+    }
+
+    const setDrawer = () =>{
+        if(!draweropen){
+            setDraweropen(true)
+            fetchComments()
         }
         else{
             setDraweropen(false)
         }
 
     }
-        const Reload = () =>{
-            message.loading("Posting")
-            setLoading(true)
-            setTimeout(()=>{
-              setLoading(false)
-              window.location.reload()
-            },1000)
-            
-          }
     
           
     
-        const onPost = () => {
+        const onPost = async () => {
         if(user==""){
             setUser("user")
         }
           const obj = {postid, user, comment, date}
           
-          
-          fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments",
+          setLoading(true)
+          await fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments",
           {
                 method:"POST",
                 headers:{'content-type':'application/json'},
                 body:JSON.stringify(obj)
           }
           )
-        
-            Reload()
+          setLoading(false)
+            setUpdate(!update)
+            setComment("")
+
         }
         
     
@@ -81,7 +85,7 @@ export default function CommentButton(props:Props){
         <>
         <div style={{display:"flex", alignItems:"center", gap:"0.25rem"}}>
             <button onClick={setDrawer} className='footer-button'><MessagesSquare style={{marginTop:"0.2rem"}} width='1.25rem' color='#6a6a6a'/></button>
-            <p style={{fontSize:"0.85rem", fontWeight:"600", marginTop:"0.2rem"}}>{props.comments}</p>
+            <p style={{fontSize:"0.85rem", fontWeight:"600", marginTop:"0.2rem"}}></p>
         </div>
 
         <Drawer open={draweropen}>
@@ -111,7 +115,7 @@ export default function CommentButton(props:Props){
                 
 
                 <div style={{display:"flex", bottom:0}}>
-                    <input className="comment-input" onChange={e=>setComment(e.target.value)} placeholder="Add comment" style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%", background:"none", border:"none"}}></input>
+                    <input className="comment-input" value={comment} onChange={e=>setComment(e.target.value)} placeholder="Add comment" style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%", background:"none", border:"none"}}></input>
 
                     <ConfigProvider theme={{algorithm: theme.defaultAlgorithm, token:{colorPrimary:"salmon",colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#9a9a9a", colorText:"#6a6a6a"}}}>
                         <button type="submit" style={{paddingLeft:"1.5rem", paddingRight:"1.5rem", display:"flex", gap:"0.5rem", alignItems:"center"}} disabled={!postable} onClick={onPost} className={postable?"active-btn":"disabled"}>{loading?<LoadingOutlined/>:null}Comment</button>

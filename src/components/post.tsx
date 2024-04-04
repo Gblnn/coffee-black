@@ -23,17 +23,17 @@ interface Props {
 
 export default function Post(props:Props) {
 
-    const [posts, setPosts] = useState("")
+    // const [posts, setPosts] = useState("")
     const [showMore, setShowMore] = useState(false);
     const [loaded, setLoaded] = useState(true)
 
-    useEffect(()=>{
-        fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments?postid="+props.id)
-            .then(res => res.json())
-            .then(data => {
-              setPosts(data)
-            })
-      },[props.id])
+    // useEffect(()=>{
+    //     fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments?postid="+props.id)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //           setPosts(data)
+    //         })
+    //   },[props.id])
 
     // useEffect(()=>{
     //     setTimeout(()=>{
@@ -113,7 +113,7 @@ export default function Post(props:Props) {
             <div className='footer-controls'>
 
                 <LikeButton id={props.id} liked={props.liked} likecount={props.likes}/>
-                <CommentButton postid={props.id} comments={String(posts.length)=="9"?"0":String(posts.length)}/>
+                <CommentButton postid={props.id}/>
                 
             </div>
 

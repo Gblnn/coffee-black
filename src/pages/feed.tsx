@@ -9,13 +9,20 @@ export default function Feed(){
     const user_data = window.name
 
     const [posts, setPosts] = useState<any[]>([])
+    const [loaded, setloaded] = useState(false)
+
     useEffect(()=>{
-        fetch("https://6586a271468ef171392e80df.mockapi.io/posts")
+        fetchPosts()
+    },[])
+
+    const fetchPosts = async () => {
+        await fetch("https://6586a271468ef171392e80df.mockapi.io/posts")
             .then(res => res.json())
             .then(data => {
                 setPosts(data)
             })
-    },[setPosts])
+            setloaded(true)
+    }
 
     return(
         <>
@@ -35,7 +42,8 @@ export default function Feed(){
                 }
                 
             </div>
-            <LoadingOutlined style={{fontSize:"2rem", zIndex:"-1"}}/>
+            {!loaded?<LoadingOutlined style={{fontSize:"2rem", zIndex:"-1"}}/>:null}
+            
             <div style={{height:"6rem"}}></div>
 
         </div>
