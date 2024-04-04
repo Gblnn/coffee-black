@@ -25,7 +25,7 @@ export default function Post(props:Props) {
 
     const [posts, setPosts] = useState("")
     const [showMore, setShowMore] = useState(false);
-    const [loaded, setLoaded] = useState(false)
+    const [loaded, setLoaded] = useState(true)
 
     useEffect(()=>{
         fetch("https://658c3fd2859b3491d3f5c978.mockapi.io/comments?postid="+props.id)
@@ -35,15 +35,15 @@ export default function Post(props:Props) {
             })
       },[props.id])
 
-    useEffect(()=>{
-        setTimeout(()=>{
-            setLoaded(true)
-        },1500)   
-    },[])
+    // useEffect(()=>{
+    //     setTimeout(()=>{
+    //         setLoaded(true)
+    //     },1500)   
+    // },[])
 
-      const onLoad = () => {
-        // setLoaded(true)
-      }
+    useEffect(()=>{
+
+    },[loaded])
 
     return(
         <>
@@ -56,11 +56,11 @@ export default function Post(props:Props) {
                     <>
                     <div className='animate-pulse' style={{width:"1.5rem", height:"1.5rem", background:"rgba(120 120 120/ 20%)", borderRadius:"50%"}}></div>
                     <div style={{width:"10rem", height:"1rem", background:"rgba(120 120 120/ 20%)", borderRadius:"0.25rem"}}></div>
-                    </>
+                    </> 
                     
                     :
                     <>
-                    <img onLoad={onLoad} className='pfp' src={props.profile}/>
+                    <img className='pfp' src={props.profile}/>
                     <h3>{props.author}</h3>
                     {
                         props.author=="coffee"||props.author=="moozkeen"?

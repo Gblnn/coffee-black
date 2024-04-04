@@ -25,7 +25,7 @@ export default function Onboarding() {
             
                 
             </div>
-            <Button onClick={()=>usenavigate("/login")} style={{position:"absolute", bottom:0, margin:"5rem", background:"#1a1a1a"}}>Get Started</Button>
+            <Button onClick={()=>usenavigate("/login")} style={{position:"absolute", bottom:0, margin:"5rem", background:"#2a2a2a"}}>Get Started</Button>
             
         </div>
     )

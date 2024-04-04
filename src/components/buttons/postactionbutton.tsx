@@ -143,13 +143,13 @@ export default function PostActionButton(props:Props){
                     </div>
                     
 
-                    <TextArea rows={6} className="comment-input" onChange={e=>setContent(e.target.value)} placeholder="Add Post" bordered={false} style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}}></TextArea>
+                    <textarea className="comment-input" onChange={e=>setContent(e.target.value)} placeholder="Add Post" style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%", height:"100%", padding:"0.75rem", background:"none", border:"none", outline:"none"}}></textarea>
 
                 </div>
 
                 <div style={{width:"100%", border:"", padding:"2rem", display:"flex", justifyContent:"flex-end",gap:"1rem"}}>
 
-                    <Input onChange={e=>setBio(e.target.value)} className="comment-input" bordered={false} style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}} placeholder="Captions (Optional)"></Input>
+                    <input onChange={e=>setBio(e.target.value)} className="comment-input" style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%", border:"none", background:"none"}} placeholder="Captions (Optional)"></input>
 
                     <ConfigProvider theme={{token:{colorPrimary:"#c4743b", colorBorder:"none", colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#6a6a6a"}}}>
                 
