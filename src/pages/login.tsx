@@ -1,8 +1,9 @@
 import CoffeeBean from "@/components/icons/coffeebean";
-import { Button, ConfigProvider, Form, Typography, message, theme } from "antd";
+import { LoadingOutlined } from '@ant-design/icons';
+import { ConfigProvider, Form, Typography, message, theme } from "antd";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 
 
 export default function Login() {
@@ -73,7 +74,7 @@ export default function Login() {
             <div style={{padding:"1.5rem", border:"", height:"100%"}}>
                 <div style={{display:"flex", gap:"0.5rem"}}>
                 {/* <img style={{width:"2.5rem"}} src="/coffee-bag-color.png"/> */}
-                <CoffeeBean/>
+                <CoffeeBean fill="var(--color)"/>
                 <h1 className="coffee" style={{fontWeight:600, fontSize:"1.75rem"}}>COFFEE</h1>
                 </div>
                 
@@ -86,7 +87,7 @@ export default function Login() {
                             <input type="password" onChange={e=>setPassword(e.target.value)} style={{fontFamily:"Clash Grotesk", fontSize:"16px"}} placeholder="Password"/>
                             
                         
-                        <Button htmlType="submit" onClick={Validate} loading={loading} disabled={!postable} style={{marginTop:"1.5rem",border:"1px solid rgba(120 120 120/40%)"}}>LOGIN</Button>
+                        <button type="submit" onClick={Validate} className={postable?"active-btn":"disabled"} disabled={!postable} style={{marginTop:"1.5rem", padding:"0.25rem", fontSize:"1rem", fontWeight:500, display:"flex", alignItems:"center", justifyContent:"center", gap:'0.75rem'}}>{loading?<LoadingOutlined/>:null}LOGIN</button>
                         
                         <Typography style={{marginTop:"0.5rem",fontFamily:"Clash Grotesk", textAlign:"center", color:"#6a6a6a"}}>Dont have an account? <Link to="/signup" style={{color:"var(--color)", fontWeight:600}}>Sign-in</Link></Typography>
                         

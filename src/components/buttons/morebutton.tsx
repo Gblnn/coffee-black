@@ -1,5 +1,5 @@
 import { ConfigProvider, Dropdown, MenuProps, message, theme } from "antd";
-import { MoreHorizontal, Trash } from "lucide-react";
+import { MoreHorizontal } from "lucide-react";
 import { useState } from "react";
 import AlertDialogBox from "../alert-dialogbox";
 
@@ -126,7 +126,7 @@ export default function MoreButton(props:Props){
             
         </ConfigProvider>
         {/* <DialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel} onConfirm={handleConfirm} action={action}/> */}
-        <AlertDialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel} onConfirm={handleConfirm} action={action} actionbutton={actionbutton} actionicon={action=="delete"?<Trash width="1rem" style={{marginRight:"0.25rem"}}/>:null} />
+        <AlertDialogBox open={dialog} title={dialogtitle} desc={dialogdesc} onCancel={handleCancel} onConfirm={handleConfirm} action={action} actionbutton={actionbutton} destructive />
         </>
     )
 }

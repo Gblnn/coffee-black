@@ -25,7 +25,7 @@ body {
 button {
   padding: 0;
   margin: 0;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
 }
 
 strong {
@@ -54,7 +54,7 @@ input:focus {
 }
 
 .coffee {
-  background: -webkit-linear-gradient(#eee, #1a1a1a);
+  background: -webkit-linear-gradient(white, #1a1a1a);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -129,10 +129,10 @@ input:focus {
 }
 
 .active-btn {
-  transition: 0.25s;
+  transition: 0.3s;
   background: white;
   color: var(--semi);
-  box-shadow: 1px 1px 10px rgba(100 100 100/ 75%);
+  /* box-shadow: 1px 1px 10px rgba(100 100 100/ 75%); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,6 +140,7 @@ input:focus {
 }
 
 .disabled {
+  transition: 0.3s;
   background: rgba(100 100 100/15%);
   color: #6a6a6a;
 }
