@@ -11,7 +11,7 @@ export default function SaveButton(){
             setSavestate("rgba(0 0 0/ 0%)")
         }
         if(saved == true){
-            setSavestate("#6a6a6a")
+            setSavestate("#8a8a8a")
         }
     },[saved])
 

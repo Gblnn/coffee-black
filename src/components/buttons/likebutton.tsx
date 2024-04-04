@@ -25,7 +25,7 @@ export default function LikeButton(props:Props){
     },[liked])
 
     const onLike = () =>{
-        if (likestate==="#6a6a6a"){
+        if (likestate==="#8a8a8a"){
         setLiked(true)
          
             fetch('https://6586a271468ef171392e80df.mockapi.io/posts/'+props.id, {
