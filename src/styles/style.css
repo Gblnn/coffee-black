@@ -117,7 +117,7 @@ input:focus {
   padding: 0.2rem;
 }
 
-.hoverable:hover {
+.hoverable:active {
   background: rgba(120 120 120 /10%);
 }
 
@@ -231,15 +231,15 @@ body::-webkit-scrollbar-thumb {
 
   body {
     color-scheme: dark;
-    background: #111111;
-    color: rgba(245 245 245 /70%);
+    background: black;
+    color: rgba(255 255 255 /100%);
     --card-color: #151515;
     --nav-color: rgba(30 30 30 /80%);
     --bio-color: rgba(40 40 40 /80%);
     --chat-bg: linear-gradient(black, #1a1a1a);
     --semi: #191919;
     --hemi: #1f1f1f;
-    --color: rgb(220 220 220);
+    --color: rgb(250 250 250);
   }
   .comment-input::placeholder {
     opacity: 1;

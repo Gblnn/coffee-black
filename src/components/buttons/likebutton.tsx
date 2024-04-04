@@ -1,5 +1,5 @@
 
-import { Coffee } from "lucide-react";
+import { CoffeeIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 
@@ -51,7 +51,7 @@ export default function LikeButton(props:Props){
     return(
         <>
         <div style={{display:"flex", alignItems:"center", gap:"0.25rem"}}>
-            <button onClick={onLike} className='footer-button'><Coffee width='1.4rem' color={likestate}/></button>
+            <button onClick={onLike} className='footer-button'><CoffeeIcon width='1.4rem' color={likestate} /></button>
             {/* <p style={{fontSize:"0.85rem", fontWeight:"600", marginTop:"0.2rem"}}>{props.likecount}</p> */}
         </div>
         </>
