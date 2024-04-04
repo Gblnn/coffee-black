@@ -1,9 +1,9 @@
-import { Button, ConfigProvider, Form, message, theme } from "antd"
+import { ConfigProvider, Form, message, theme } from "antd"
 import { MessagesSquare } from "lucide-react"
 import { useEffect, useState } from "react"
 import Comment from "../comment"
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "../ui/drawer"
-
+import {LoadingOutlined} from '@ant-design/icons'
 
 interface Props {
     postid:number
@@ -90,7 +90,7 @@ export default function CommentButton(props:Props){
                     <DrawerTitle style={{textAlign:"center"}}>Comments</DrawerTitle>
                     <DrawerDescription></DrawerDescription>
                 </DrawerHeader>
-                <div style={{height:"65svh", border:"", width:"100%", display:"flex", flexFlow:"column",justifyContent:"flex-end", padding:"1rem", gap:"0rem"}}>
+                <div style={{height:"70svh", border:"", width:"100%", display:"flex", flexFlow:"column",justifyContent:"flex-end", padding:"1rem", gap:"0rem", overflowY:"scroll"}}>
                     
                         {
                     
@@ -114,7 +114,7 @@ export default function CommentButton(props:Props){
                     <input className="comment-input" onChange={e=>setComment(e.target.value)} placeholder="Add comment" style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%", background:"none", border:"none"}}></input>
 
                     <ConfigProvider theme={{algorithm: theme.defaultAlgorithm, token:{colorPrimary:"salmon",colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#9a9a9a", colorText:"#6a6a6a"}}}>
-                        <Button htmlType="submit" type="primary" style={{border:"1px solid rgba(120 120 120/40%)", color:"#8a8a8a"}} disabled={!postable} onClick={onPost} loading={loading}>Comment</Button>
+                        <button type="submit" style={{paddingLeft:"1.5rem", paddingRight:"1.5rem", display:"flex", gap:"0.5rem"}} disabled={!postable} onClick={onPost} className={postable?"active-btn":"disabled"}>{loading?<LoadingOutlined/>:null}Comment</button>
                     </ConfigProvider>
                 </div>
                 
