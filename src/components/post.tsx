@@ -67,7 +67,7 @@ export default function Post(props:Props) {
                         <img style={{width:"1rem", color:"salmon"}} src='/verified.png'></img>:null
                     }
                     <p>•</p>
-                <ReactTimeAgo style={{fontSize:"0.8rem", fontWeight:400}} date={props.date} locale='en' timeStyle="twitter"/>
+                <ReactTimeAgo style={{fontSize:"0.9rem", fontWeight:400}} date={props.date} locale='en' timeStyle="twitter"/>
                     </>
                     
                 }
