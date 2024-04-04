@@ -27,7 +27,7 @@ export default function Feed(){
     return(
         <>
 
-        <div className="container" style={{}}>
+        <div className="container" style={{display:"flex", justifyContent:"center"}}>
             <div className="feed-container">
                 {
                     posts.map((posts)=>(
@@ -42,7 +42,7 @@ export default function Feed(){
                 }
                 
             </div>
-            {!loaded?<LoadingOutlined style={{fontSize:"2rem", zIndex:"-1"}}/>:null}
+            {!loaded?<LoadingOutlined style={{fontSize:"2rem", zIndex:"-1", position:"absolute", top:"40%"}}/>:null}
             
             <div style={{height:"6rem"}}></div>
 
