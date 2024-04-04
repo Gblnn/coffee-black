@@ -52,7 +52,7 @@ export default function LikeButton(props:Props){
         <>
         <div style={{display:"flex", alignItems:"center", gap:"0.25rem"}}>
             <button onClick={onLike} className='footer-button'><Coffee width='1.4rem' color={likestate}/></button>
-            <p style={{fontSize:"0.85rem", fontWeight:"600", marginTop:"0.2rem"}}>{props.likecount}</p>
+            {/* <p style={{fontSize:"0.85rem", fontWeight:"600", marginTop:"0.2rem"}}>{props.likecount}</p> */}
         </div>
         </>
     )

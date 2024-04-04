@@ -7,6 +7,7 @@ import Login from "./pages/login"
 import SignUp from "./pages/signup"
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en.json'
+import Onboarding from "./pages/onboarding"
 TimeAgo.addDefaultLocale(en)
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Route path="/*" element={<Home/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/signup" element={<SignUp/>}/>
+      <Route path='onboarding' element={<Onboarding/>}/>
     </Routes>
     </BrowserRouter>
   )

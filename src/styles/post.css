@@ -54,18 +54,18 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(10, 10, 10);
-  width: 93%;
+  width: 95%;
   height: 25ch;
-  border-radius: 0.5rem;
+  /* border-radius: 0.25rem; */
   /* box-shadow: inset 1px 1px 10px rgba(0 0 0 /50%); */
 }
 
 .content {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: #8a8a8a;
   background: none;
   text-align: center;
-  width: 75%;
+  width: 95%;
 }
 
 .post-footer {
@@ -79,8 +79,8 @@
 .footer-controls {
   display: flex;
   align-items: center;
-  margin-left: 1rem;
-  gap: 0.25rem;
+  margin-left: 0.75rem;
+  gap: 0.5rem;
   /* border: 1px solid; */
 }
 

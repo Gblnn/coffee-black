@@ -2,6 +2,8 @@ import { Button, ConfigProvider, Form, Typography, message, theme } from "antd";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "@/firebase";
 
 export default function SignUp() {
 
@@ -14,30 +16,10 @@ export default function SignUp() {
     const [profile, setProfile] = useState("/coffee.png")
     window.name = username
 
-    const obj = {profile, email, fullname, username, password}
-
     const usenavigate = useNavigate()
 
     useEffect(()=>{
-        if(fullname==""){
-            setPostable(false)
-        }
-        else{
-            setPostable(true)
-        }
-        if(email==""){
-            setPostable(false)
-        }
-        else{
-            setPostable(true)
-        }
-        if(username==""){
-            setPostable(false)
-        }
-        else{
-            setPostable(true)
-        }
-        if(password==""){
+        if(fullname==""||email==""||username==""||password==""){
             setPostable(false)
         }
         else{
@@ -49,21 +31,9 @@ export default function SignUp() {
         }
     },[username, password, profile])
 
-    const SignUp=()=>{
-
+    const SignUp = async () => {
         setLoading(true)
-
-        //Posting data to MockAPI
-        setTimeout(() => {
-            setLoading(false)
-            fetch("https://6586a271468ef171392e80df.mockapi.io/users",
-            {
-                method:"POST",
-                headers:{'content-type':'application/json'},
-                body:JSON.stringify(obj)
-            }
-            )
-        }, 1000);
+        await addDoc(collection(db, "users"), {profile:profile, email:email, fullname:fullname, username:username, password:password})
     }
 
     //Checking for empty fields

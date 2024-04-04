@@ -10,68 +10,61 @@ export default function Login() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [postable, setPostable] = useState(false)
-    const [posts, setPosts] = useState<any[]>([])
     const [loading, setLoading] = useState(false)
-    const usenavigate = useNavigate()
+    
+    const usenavigate = useNavigate();
 
-    let loginfailed = false
-
-    useEffect(()=>{
-        if(username==""){
-            setPostable(false)
-        }
-        else{
-            setPostable(true)
-        }
-        if(password==""){
-            setPostable(false)
-        }
-        else{
-            setPostable(true)
-        }   
-    },[username, password])
-
-    //Fetching Login Details from MockAPI
-    useEffect(()=>{
-        setTimeout(()=>{ 
-            fetch("https://6586a271468ef171392e80df.mockapi.io/users?username="+username)
-        .then(res => res.json())
-        .then(data => {
-            setPosts(data) 
-            console.log(data)
-        })  
-        },3000)
-        
-    },[username, password])
-
-    window.name = username
-
-    const Validate = () =>{
-
-        setUsername(username.toLowerCase())
-        setLoading(true)
-
-        setTimeout(() => {
-
-            setLoading(false)
-            posts.map((post)=>{
-           
-                if(post.username === username && post.password === password){
-                    // message.success("Logged In")
-                    usenavigate('/feed')
-                    loginfailed=false
-                }
-                else{
-                    loginfailed=true
-                }
-            })
-            if(loginfailed==true){
-                message.info("Invalid credentials")
-            }
-
-        },1000);
-            
+  useEffect(()=>{
+    if(window.name!=""){
     }
+  },[])
+
+  useEffect(() => {
+    if (username == "") {
+      setPostable(false);
+    } else {
+      setPostable(true);
+    }
+    if (password == "") {
+      setPostable(false);
+    } else {
+      setPostable(true);
+    }
+  }, [username, password]);
+
+  window.name = username;
+  localStorage.setItem("username", username)
+
+  const Validate = async () => {
+    setUsername(username.toLowerCase());
+    setLoading(true)
+    try {
+      await fetch(
+        "https://6586a271468ef171392e80df.mockapi.io/users?username=" +username,)
+        .then((res) => res.json())
+        .then((data) => {
+          data.map((data:any)=>{
+            if(data.username== username && data.password == password){
+
+              // window.open('/index', 'rel=noopener noreferrer')
+              usenavigate("/feed")
+              setLoading(false)
+
+            }
+            else{
+              setLoading(false)
+              message.info("Invalid Password")
+            }
+          })
+          
+        });
+      
+    } catch (error) {
+      message.info("Invalid Username")
+      setLoading(false)
+    }
+    
+  };
     return(
         <>
         <div style={{display:"flex",justifyContent:"center",alignItems:"center",width:"100%",height:"100svh", border:""}}>
