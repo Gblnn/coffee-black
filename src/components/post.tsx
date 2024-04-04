@@ -42,7 +42,7 @@ export default function Post(props:Props) {
     // },[])
 
     useEffect(()=>{
-
+        setLoaded(true)
     },[loaded])
 
     return(
