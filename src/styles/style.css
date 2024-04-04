@@ -235,7 +235,7 @@ body::-webkit-scrollbar-thumb {
     color: rgba(255 255 255 /100%);
     --card-color: #1a1a1a;
     --nav-color: rgba(30 30 30 /80%);
-    --bio-color: rgba(40 40 40 /80%);
+    --bio-color: rgba(50 50 50 /80%);
     --chat-bg: linear-gradient(black, #1a1a1a);
     --semi: #191919;
     --hemi: #1f1f1f;
