@@ -1,8 +1,9 @@
-import { Button, ConfigProvider, Input, Select, message, theme } from "antd";
+import { ConfigProvider, Input, Select, message, theme } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import { PlusSquare } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "../ui/drawer";
+import {LoadingOutlined} from '@ant-design/icons'
 
 interface Props{
     userdata:string
@@ -75,7 +76,7 @@ export default function PostActionButton(props:Props){
 
       
 
-      const onPost=()=>{
+      const onPost = async ()=>{
 
         
         author = props.userdata
@@ -83,10 +84,10 @@ export default function PostActionButton(props:Props){
         const obj = {profile, author, content, colorscheme, date, bio}
         
         setLoading(true)
-        setTimeout(() => {
+    
             if(rejected==false||props.userdata=="gbln"){
                 
-                fetch("https://6586a271468ef171392e80df.mockapi.io/posts",
+                await fetch("https://6586a271468ef171392e80df.mockapi.io/posts",
                 {
                     method:"POST",
                     headers:{'content-type':'application/json'},
@@ -101,7 +102,7 @@ export default function PostActionButton(props:Props){
                 setLoading(false)
             }
             
-        }, 1000);
+        
         
         
     }
@@ -150,9 +151,12 @@ export default function PostActionButton(props:Props){
 
                     <Input onChange={e=>setBio(e.target.value)} className="comment-input" bordered={false} style={{opacity:1,color:"var(--color)",fontFamily:"Clash Grotesk",fontSize:"16px", width:"95%"}} placeholder="Captions (Optional)"></Input>
 
-                <ConfigProvider theme={{token:{colorPrimary:"#c4743b", colorBorder:"none", colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#6a6a6a"}}}>
+                    <ConfigProvider theme={{token:{colorPrimary:"#c4743b", colorBorder:"none", colorBgContainerDisabled:"rgba(100 100 100 / 10%)", colorTextDisabled:"#6a6a6a"}}}>
                 
-                    <Button type="primary" style={{width:"6rem"}} disabled={!postable} onClick={onPost} loading={loading}>Post</Button>
+                        <button style={{paddingLeft:"1.5rem",paddingRight:"1.5rem"}} className={postable?"active-btn":"disabled"} disabled={!postable} onClick={onPost}>
+                            {loading?<LoadingOutlined/>:null}
+                            Post</button>
+
                     </ConfigProvider>
                 </div>
             </DrawerContent>

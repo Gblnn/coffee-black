@@ -12,10 +12,10 @@
 .post-header {
   display: flex;
   align-items: center;
-  /* border: 1px solid; */
   justify-content: space-between;
   border-radius: 0.5rem;
   height: 2.75rem;
+  width: 100%;
 }
 
 .post-profile {
@@ -55,7 +55,7 @@
   justify-content: center;
   background-color: rgb(10, 10, 10);
   width: 95%;
-  height: 25ch;
+  height: 26ch;
   /* border-radius: 0.25rem; */
   /* box-shadow: inset 1px 1px 10px rgba(0 0 0 /50%); */
 }
