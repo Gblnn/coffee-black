@@ -115,7 +115,7 @@ export default function OtherMoreButton(){
 
     
           <Dropdown menu={{items}} trigger={['click']}>
-          <button className='flex' onClick={setDropdown}>
+          <button className='flex' onClick={setDropdown} style={{paddingLeft:"0.5rem", paddingRight:"0.5rem"}}>
             <MoreHorizontal color='#8a8a8a' width="1.25rem"/>
           </button>
         </Dropdown>
