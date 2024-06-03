@@ -4,7 +4,7 @@
   background-color: var(--card-color);
   border-radius: 1rem;
   margin-bottom: 1.5rem;
-  border: 1px solid rgba(240 240 240 / 25%);
+  /* border: 1px solid rgba(240 240 240 / 25%); */
   box-shadow: 1px 1px 10px rgba(0 0 0 /40%);
   /* margin: 1rem; */
 }

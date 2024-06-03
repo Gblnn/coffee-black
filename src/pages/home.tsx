@@ -27,7 +27,6 @@ export default function Home(){
                 <Route path='brews' element={<Brews/>}/>
                 <Route path='posts' element={<Posts/>}/>
                 <Route path='saved' element={<Saved/>}/>
-                
             </Routes>
         </>
     )
